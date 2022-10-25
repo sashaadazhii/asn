@@ -151,7 +151,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 0 20px;
+      padding-bottom: 20px;
       @include font(14px, $color-space, 600);
       &:last-child {
         padding: 0;

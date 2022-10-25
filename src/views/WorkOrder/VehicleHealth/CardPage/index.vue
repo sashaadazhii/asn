@@ -30,7 +30,7 @@
           <div v-if="block !== 'Service'" class="blocks__subtitle">{{ card.description }}</div>
           <div v-if="block !== 'Service'" class="blocks__nav">
             <button class="blocks__btn" :class="{'-green': block === 'General'}" @click="block = 'General'">General</button>
-            <button class="blocks__btn" :class="{'-green': block === 'Additional'}" @click="block = 'Additional'">Additional Info</button>
+            <!-- <button class="blocks__btn" :class="{'-green': block === 'Additional'}" @click="block = 'Additional'">Additional Info</button> -->
             <button class="blocks__btn" :class="{'-green': block === 'Notes'}" @click="block = 'Notes'">Notes</button>
             <button class="blocks__btn" :class="{'-green': block === 'Tracking'}" @click="block = 'Tracking'">Service Tracking</button>
             <button class="blocks__btn" :class="{'-green': block === 'Media'}" @click="block = 'Media'">Media</button>
@@ -41,16 +41,16 @@
           </div>
         </div>
         <div v-if="block !== 'Service'" class="modal__main-requests">
-          <div class="requests__row">
+          <!-- <div class="requests__row">
             <div class="requests__row-title">Card Status:</div>
             <Menu :list="statusesChange" :disabled="!isStart">
               <template #menu>
                 <Label :label="card.status" size="small" class="requests__label -hover" :class="labelClass(card.status)" />
               </template>
             </Menu>
-          </div>
+          </div> -->
 
-          <div class="requests__row">
+          <!-- <div class="requests__row">
             <div class="requests__row-title">Approval Status:</div>
             <Label
               :label="card.approvalStatus"
@@ -61,7 +61,7 @@
               :class="labelClass(card.approvalStatus)"
               iconSize="8px"
             />
-          </div>
+          </div> -->
           <div class="requests__list">
             <!-- <div v-if="card.isRequest" class="requests__list-title">Customer Requests:</div>
             <div v-if="card.isRequest" class="request__wrapper">

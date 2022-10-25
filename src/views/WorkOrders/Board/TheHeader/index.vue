@@ -2,19 +2,6 @@
   <div class="header__wrapper">
     <div class="header__inner">
       <div class="header__left">
-        <Dropdown v-model="shift" :options="shifts" size="medium">
-          <template #value="{value}">
-            <div class="y-dropdown-label-custom">
-              <span class="-title">Shifts:</span>
-              <span>{{ value.name }} </span>
-            </div>
-          </template>
-          <template #option="{option}">
-            <div class="y-dropdown-item-custom">
-              <span>{{ option.name }}</span>
-            </div>
-          </template>
-        </Dropdown>
         <Dropdown v-model="day" :options="days" size="medium" @change="changeDay">
           <template #value="{value}">
             <div class="y-dropdown-label-custom">
@@ -38,17 +25,6 @@
             </label>
           </template>
         </DatePicker>
-        <div v-if="day === 'Today'" class="header__timimg">
-          <div class="progress-wrap">
-            <div class="progress__item">
-              <div class="progress__text">ACG</div>
-              <div class="progress">
-                <div class="progress__bar red"><span style="width: 66%" /></div>
-              </div>
-              <div class="progress__text">6.5/11 h</div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="header__right">
         <Filter
@@ -100,14 +76,14 @@ import dayjs from 'dayjs'
 
 export default {
   name: 'WorkBoardTaskHeader',
-  components: {Filter, Button, DatePicker, Dropdown},
+  components: {Filter, Button, Dropdown, DatePicker},
   data() {
     return {
       activeFilters: [],
       filtersList: [],
       date: new Date(),
       day: 'Today',
-      days: ['Today', 'Three Days', 'Five Days', 'Custom'],
+      days: ['Today', 'Custom'],
       shift: {name: 'Day Shift'}
     }
   },

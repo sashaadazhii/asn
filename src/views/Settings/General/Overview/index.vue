@@ -109,13 +109,7 @@
           <div
             class="overview__widget"
             :class="{
-              hidden:
-                !settings.loanVehicles &&
-                !settings.rideToWork &&
-                !settings.hasShifts &&
-                !settings.winterTires &&
-                !settings.tiresStorage &&
-                !settings.initialWalkThrough
+              hidden: !settings.loanVehicles && !settings.rideToWork && !settings.partsBins && !settings.winterTires && !settings.initialWalkThrough
             }"
           >
             <div class="overview__widget-wrap overview__widget-wrap--top">
@@ -129,23 +123,15 @@
             </div>
             <div
               class="overview__widget-wrap overview__widget-wrap--bottom"
-              v-if="
-                settings.loanVehicles ||
-                settings.rideToWork ||
-                settings.hasShifts ||
-                settings.winterTires ||
-                settings.tiresStorage ||
-                settings.initialWalkThrough
-              "
+              v-if="settings.loanVehicles || settings.rideToWork || settings.partsBins || settings.winterTires || settings.initialWalkThrough"
             >
               <div class="overview__widget-block">
                 <div class="overview__subtitle--long">Services:</div>
                 <div v-if="settings.loanVehicles" class="overview__widget-info"><i class="i-car_rental"></i> <span>Vehicle in return</span></div>
                 <div v-if="settings.rideToWork" class="overview__widget-info"><i class="i-local_taxi"></i> <span>Ride to work</span></div>
-                <div v-if="settings.hasShifts" class="overview__widget-info"><i class="i-fiber_smart_record"></i> <span>Shifts</span></div>
+                <div v-if="settings.partsBins" class="overview__widget-info"><i class="i-archive"></i> <span>Parts Bins</span></div>
                 <div v-if="settings.initialWalkThrough" class="overview__widget-info"><i class="i-video_call"></i> <span>Initial Walk Through</span></div>
                 <div v-if="settings.winterTires" class="overview__widget-info"><i class="i-autorenew"></i> <span>Winter Tires Card</span></div>
-                <div v-if="settings.tiresStorage" class="overview__widget-info"><i class="i-grid_view"></i> <span>Tires Storage</span></div>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default {
     set(state, workOrders) {
       state.workOrders = workOrders
     },
-    creaete(state, {vehicle, customer}) {
+    create(state, {vehicle, customer}) {
       const {uid, firstName, lastName, cellPhones} = customer
       const {uid: vehicleUID, make, model, year, currentOdometer} = vehicle
       const order = {
@@ -32,6 +32,8 @@ export default {
         partsOrdered: false,
         timeComing: null,
         timePromised: null,
+        // startsAt: null,
+        // endsAt: null,
         technician: null,
         serviceAdvisor: null,
         // =============== Notes =============
@@ -44,7 +46,8 @@ export default {
         courtesyVehicle: null,
         // =============== Questions =============
         // =============== Requests =============
-        customRequests: null
+        customRequests: null,
+        logicalStatus: 'Not Started'
       }
       state.workOrder = order
     },
@@ -69,7 +72,7 @@ export default {
       state.workOrder = order
     },
     add(state, order) {
-      if (state.workOrders.unscheduled) state.workOrders.unscheduled.unshift(order)
+      if (state.workOrders.todo) state.workOrders.todo.unshift(order)
     },
     reset(state) {
       state.workOrders = []
@@ -119,12 +122,10 @@ export default {
   },
   actions: {
     async create({commit}, order) {
-      const url = process.env.VUE_APP_BACKEND
       try {
-        const req = await axios.post(`${url}work-orders/`, order)
-        const newOrder = req.data
-        commit('add', newOrder)
-        return newOrder
+        order.uid = Math.floor(Math.random() * 10000)
+        commit('add', order)
+        return order
       } catch (err) {
         commit('setError', err, {root: true})
         throw err

@@ -1,6 +1,7 @@
 <template>
   <div class="card__wrapper" :class="{'-check': isStart}">
-    <div class="y-check" :class="{'-active': card.select, '-hide': !isStart}" @click="select(card.id)" />
+    <div class="y-check" :class="{'-active': card.select, '-hide': !isStart}" :style="[isChecked ? {opacity: 1} : {opacity: 0}]" @click="select(card.id)" />
+
     <div class="card__menu">
       <Menu :list="statusesChange" position="left" :disabled="!isStart">
         <template #menu>
@@ -97,8 +98,12 @@ export default {
   },
   computed: {
     ...mapState({
-      isStart: s => s.workOrder.isStart
-    })
+      isStart: s => s.workOrder.isStart,
+      requests: s => s.requests.requests
+    }),
+    isChecked() {
+      return this.requests.filter(r => r.status === 'Not Processed').length === 0 ? true : false
+    }
   },
   methods: {
     ...mapMutations({

@@ -125,18 +125,6 @@ const routes = [
         component: () => import('@/views/Settings/Employees/Employee')
       },
       {
-        path: 'shifts',
-        name: 'CompanySettingsShifts',
-        meta: {layout: 'admin', access: ['admin'], auth: true, header: 'CompanySettings'},
-        component: () => import('@/views/Settings/Shifts')
-      },
-      {
-        path: 'shifts/:id',
-        name: 'CompanySettingsShift',
-        meta: {layout: 'admin', access: ['admin'], auth: true, header: 'CompanySettings'},
-        component: () => import('@/views/Settings/Shifts/ShiftPage')
-      },
-      {
         path: 'statuses',
         name: 'CompanySettingsStatuses',
         meta: {layout: 'admin', access: ['admin'], auth: true, header: 'CompanySettings'},

@@ -23,7 +23,7 @@
     </div>
     <div v-if="isNew" class="header__menu">
       <router-link :to="'/work-orders/board'"><Button label="Cancel" border grey /></router-link>
-      <router-link :to="'/work-orders/board'"><Button label="Save" /></router-link>
+      <router-link :to="'/work-orders/board'"><Button label="Save" @click="createOrder()" /></router-link>
     </div>
     <div v-else class="header__menu">
       <Label v-if="!isStart" icon="i-lock orange" label="View Only" border class="-orange" size="large" />
@@ -39,7 +39,7 @@
 import Mileage from './Mileage'
 import Button from '@/components/Yaro/Button'
 import Label from '@/components/Yaro/Label'
-import {mapState, mapMutations} from 'vuex'
+import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'OrderHeader',
@@ -63,7 +63,15 @@ export default {
   methods: {
     ...mapMutations({
       startOrder: 'workOrder/startOrder'
+      // add: 'workOrder/add'
     }),
+    ...mapActions({
+      create: 'workOrder/create'
+    }),
+    async createOrder() {
+      await this.create(this.order)
+      console.log(this.order)
+    },
     statusClass(status) {
       return {
         card__status: true,
@@ -85,6 +93,7 @@ export default {
           return 'i-rp_done'
       }
     },
+
     open() {
       this.$vfm.show({
         component: Mileage,

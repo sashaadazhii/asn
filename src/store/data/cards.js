@@ -6,7 +6,8 @@ function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-const approvalStatuses = ['No Status', 'Approved By Customer', 'Approved By SA', 'Temporary Declined', 'Permanently Declined', 'Approved For Next Visit']
+// const approvalStatuses = ['No Status', 'Approved By Customer', 'Approved By SA', 'Temporary Declined', 'Permanently Declined', 'Approved For Next Visit']
+const approvalStatuses = ['No Status']
 
 const cardsList = cards.data
   .filter(c => c.cardRelationType === 'global')
@@ -43,7 +44,7 @@ const cardsList = cards.data
       select: false,
       status: 'No Status',
       service: getRandom(0, 101),
-      approvalStatus: approvalStatuses[getRandom(0, 6)],
+      approvalStatus: approvalStatuses[getRandom(0, 1)],
       techs: [
         {
           id: 23483,

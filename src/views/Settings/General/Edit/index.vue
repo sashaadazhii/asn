@@ -231,10 +231,9 @@ export default {
         timeZoneName,
         usersQuota,
         usersCount,
-        hasShifts,
+        partsBins,
         initialWalkThrough,
         winterTires,
-        tiresStorage,
         hourlyRate
       } = this.settings
 
@@ -275,10 +274,10 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         initialWalkThrough,
         winterTires,
-        tiresStorage,
+
         hourlyRate
       }
 

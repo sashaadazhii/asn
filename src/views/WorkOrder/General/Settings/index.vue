@@ -23,11 +23,14 @@
       <Switch :modelValue="order.partsOrdered" @click="change({partsOrdered: !order.partsOrdered})" />
     </div>
     <DatePicker :modelValue="order.timeComing" mode="dateTime" :minute-increment="5" locale="en-Ca" @update:modelValue="change({timeComing: $event})">
+      <!-- <DatePicker :modelValue="order.startsAt" mode="dateTime" :minute-increment="5" locale="en-Ca" @update:modelValue="change({startsAt: $event})">
+       -->
       <template v-slot="{inputValue, inputEvents}">
         <Input :modelValue="`${inputValue}`" v-on="inputEvents" title="Time coming" required iconLeft="i-timer orange" placeholder="Choose time & date" />
       </template>
     </DatePicker>
     <DatePicker :modelValue="order.timePromised" mode="dateTime" :minute-increment="5" locale="en-Ca" @update:modelValue="change({timePromised: $event})">
+      <!-- <DatePicker :modelValue="order.endsAt" mode="dateTime" :minute-increment="5" locale="en-Ca" @update:modelValue="change({endsAt: $event})"> -->
       <template v-slot="{inputValue, inputEvents}">
         <Input :modelValue="`${inputValue}`" v-on="inputEvents" title="Time promised" iconLeft="i-timer green" placeholder="Choose time & date" />
       </template>

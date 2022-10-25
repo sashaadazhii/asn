@@ -93,14 +93,14 @@ export default {
     }),
     ...mapMutations({
       set: 'workOrder/setOrder',
-      creaete: 'workOrder/creaete'
+      create: 'workOrder/create'
     }),
     async selectCustomer({value}) {
       this.vehicles = await this.fetchVehicles(value.uid)
     },
     next() {
       const {customer, vehicle} = this
-      this.creaete({customer, vehicle})
+      this.create({customer, vehicle})
       this.$router.push('/work-order/new/general')
     },
     newCar() {

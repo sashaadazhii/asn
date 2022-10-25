@@ -27,6 +27,15 @@
           <div class="services__title">Additional</div>
           <div class="services__row">
             <div class="services__col">
+              <i class="i-archive" :class="{active: settings.partsBins}"></i>
+              <div class="services__name">Parts Bins</div>
+            </div>
+            <div class="services__toggle-wrap">
+              <Switch v-model="settings.partsBins" @click="updatePartsBins" />
+            </div>
+          </div>
+          <div class="services__row">
+            <div class="services__col">
               <i class="i-video_call" :class="{active: settings.initialWalkThrough}"></i>
               <div class="services__name">Initial Walk Through</div>
             </div>
@@ -34,15 +43,7 @@
               <Switch v-model="settings.initialWalkThrough" @click="updateWalkThrough" />
             </div>
           </div>
-          <div class="services__row">
-            <div class="services__col">
-              <i class="i-fiber_smart_record" :class="{active: settings.hasShifts}"></i>
-              <div class="services__name">Shifts</div>
-            </div>
-            <div class="services__toggle-wrap">
-              <Switch v-model="settings.hasShifts" @click="updateShifts" />
-            </div>
-          </div>
+
           <div class="services__row">
             <div class="services__col">
               <i class="i-autorenew" :class="{active: settings.winterTires}"></i>
@@ -50,15 +51,6 @@
             </div>
             <div class="services__toggle-wrap">
               <Switch v-model="settings.winterTires" @click="updateWinterTires" />
-            </div>
-          </div>
-          <div class="services__row">
-            <div class="services__col">
-              <i class="i-grid_view" :class="{active: settings.tiresStorage}"></i>
-              <div class="services__name">Tires Storage</div>
-            </div>
-            <div class="services__toggle-wrap">
-              <Switch v-model="settings.tiresStorage" @click="updateTiresStorage" />
             </div>
           </div>
         </div>
@@ -109,9 +101,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       } = this.settings
@@ -134,9 +126,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       }
@@ -168,9 +160,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       } = this.settings
@@ -193,9 +185,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       }
@@ -228,9 +220,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       } = this.settings
@@ -253,9 +245,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       }
@@ -266,9 +258,9 @@ export default {
         this.isLoading = false
       }
     },
-    async updateShifts() {
+    async updatePartsBins() {
       if (this.isLoading) return
-      this.settings.hasShifts = !this.settings.hasShifts
+      this.settings.partsBins = !this.settings.partsBins
 
       const {
         slug,
@@ -288,9 +280,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       } = this.settings
@@ -313,9 +305,8 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
         hourlyRate,
         initialWalkThrough
       }
@@ -348,9 +339,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
+
         hourlyRate,
         initialWalkThrough
       } = this.settings
@@ -373,69 +364,9 @@ export default {
         usersQuota,
         usersCount,
         timeZoneName,
-        hasShifts,
+        partsBins,
         winterTires,
-        tiresStorage,
-        hourlyRate,
-        initialWalkThrough
-      }
-      try {
-        this.isLoading = true
-        this.update(settings)
-      } finally {
-        this.isLoading = false
-      }
-    },
-    async updateTiresStorage() {
-      if (this.isLoading) return
-      this.settings.tiresStorage = !this.settings.tiresStorage
 
-      const {
-        slug,
-        isActive,
-        businessName,
-        mainAddress,
-        businessPhoneNumber,
-        ownerName,
-        ownerEmail,
-        ownerPhone,
-        mainContactName,
-        mainContactEmail,
-        mainContactPhone,
-        hasGlobalWarranty,
-        loanVehicles,
-        rideToWork,
-        usersQuota,
-        usersCount,
-        timeZoneName,
-        hasShifts,
-        winterTires,
-        tiresStorage,
-        hourlyRate,
-        initialWalkThrough
-      } = this.settings
-
-      const settings = {
-        slug,
-        isActive,
-        businessName,
-        mainAddress,
-        businessPhoneNumber,
-        ownerName,
-        ownerEmail,
-        ownerPhone,
-        mainContactName,
-        mainContactEmail,
-        mainContactPhone,
-        hasGlobalWarranty,
-        loanVehicles,
-        rideToWork,
-        usersQuota,
-        usersCount,
-        timeZoneName,
-        hasShifts,
-        winterTires,
-        tiresStorage,
         hourlyRate,
         initialWalkThrough
       }

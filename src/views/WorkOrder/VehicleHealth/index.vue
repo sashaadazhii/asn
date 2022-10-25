@@ -65,7 +65,7 @@
       </div>
       <div class="health__table table">
         <div class="table__header" :class="{'-check': isStart}">
-          <div class="y-check" :class="{'-active': allSelected, '-hide': !isStart}" @click="selectAll" />
+          <div class="y-check" :class="{'-active': allSelected, '-hide': !isStart}" :style="[isChecked ? {opacity: 1} : {opacity: 0}]" @click="selectAll" />
           <div class="table__header-cell">Card status</div>
           <div class="table__header-cell">Card name</div>
           <div class="table__header-cell">Approval Status</div>
@@ -142,7 +142,8 @@ export default {
       allSelected: false,
       display: false,
       showRequests: false,
-      bin: null
+      bin: null,
+      isActive: false
     }
   },
   async created() {
@@ -215,6 +216,9 @@ export default {
     }),
     selectedCards() {
       return this.cards.filter(c => c.select)
+    },
+    isChecked() {
+      return this.requests.filter(r => r.status === 'Not Processed').length === 0 ? true : false
     }
   },
   watch: {
@@ -277,14 +281,16 @@ export default {
     },
     openCard(card) {
       this.setCard(card)
-      this.$vfm.show({
-        component: CardPage,
-        bind: {
-          name: 'CardPage',
-          'click-to-close': false,
-          'esc-to-close': true
-        }
-      })
+      if (!this.isChecked) return
+      else
+        this.$vfm.show({
+          component: CardPage,
+          bind: {
+            name: 'CardPage',
+            'click-to-close': false,
+            'esc-to-close': true
+          }
+        })
     },
     changeSearch(searchValue) {
       this.setSearch(searchValue)

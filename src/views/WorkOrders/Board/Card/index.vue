@@ -12,13 +12,14 @@
       <Menu :list="actionsList" />
     </div>
     <div v-if="showMainBlock" class="card__main">
-      <div v-if="order.startsAt" class="card__date">
-        <span><i class="i-timer orange" /> {{ dayjs(order.startsAt).format('DD MMM hh:mm A') }}</span>
-        <span><i class="i-timer green" /> {{ dayjs(order.endsAt).format('DD MMM hh:mm A') }}</span>
+      <div v-if="order.timeComing || order.timePromised" class="card__date">
+        <span><i class="i-timer orange" /> {{ dayjs(order.timeComing).format('DD MMM hh:mm A') }}</span>
+        <span><i class="i-timer green" /> {{ dayjs(order.timePromised).format('DD MMM hh:mm A') }}</span>
       </div>
       <div v-if="order.customer" class="card__tech">
         <i class="i-user" />
-        <span>{{ order.customer.name }}</span>
+        <span>{{ order.customer.name || order.customer.firstName + ' ' + order.customer.lastName }}</span>
+        <!-- <span>{{ order.customer.name }}</span> -->
       </div>
       <div v-if="order.vehicle" class="card__tech">
         <i class="i-directions_car" />
