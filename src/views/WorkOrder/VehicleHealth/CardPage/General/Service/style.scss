@@ -4,12 +4,15 @@
   &__wrapper {
     background-color: $color-white;
     @include border(16px, $color-grey-flash);
-
     display: grid;
     align-items: center;
     column-gap: 10px;
-    grid-template-columns: 20px auto 1fr repeat(4, auto) 32px;
+    grid-template-columns: 20px auto 1fr repeat(3, auto) 32px;
     padding: 10px;
+    &.active {
+      background-color: $color-green-mint;
+      border-color: $color-green;
+    }
     & > span {
       @include font(16px, $color-grey-space, 600);
     }
@@ -25,8 +28,8 @@
 }
 
 .y-radio {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   @include border(50%, $color-grey, 2px);
   cursor: pointer;
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -36,6 +39,15 @@
   }
   &.active {
     border-color: $color-green;
-    background-color: $color-green;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: $color-green;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+    }
   }
 }

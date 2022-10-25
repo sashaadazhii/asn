@@ -17,13 +17,17 @@ const serviceList = [
         serviceID: 1,
         name: 'Filtron OP-595',
         price: 150,
+        quantity: 2,
+        core: 0,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
       {
         id: 2,
         serviceID: 1,
         name: 'Filtron OP-575',
-        price: 150,
+        price: 10,
+        quantity: 2,
+        core: 2,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
     ]
@@ -44,7 +48,9 @@ const serviceList = [
         id: 3,
         serviceID: 2,
         name: 'Filtron OP-595',
-        price: 150,
+        price: 40,
+        quantity: 1,
+        core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
       {
@@ -52,6 +58,8 @@ const serviceList = [
         serviceID: 2,
         name: 'Filtron OP-575',
         price: 150,
+        quantity: 1,
+        core: 1,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
     ]
@@ -73,13 +81,17 @@ const serviceList = [
         serviceID: 3,
         name: 'Filtron OP-595',
         price: 150,
+        quantity: 1,
+        core: 0,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
       {
         id: 6,
         serviceID: 3,
         name: 'Filtron OP-575',
-        price: 150,
+        price: 90,
+        quantity: 3,
+        core: 2,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
     ]
@@ -100,14 +112,18 @@ const serviceList = [
         id: 7,
         serviceID: 4,
         name: 'Filtron OP-595',
-        price: 150,
+        price: 10,
+        quantity: 12,
+        core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
       {
         id: 8,
         serviceID: 4,
         name: 'Filtron OP-575',
-        price: 150,
+        price: 140,
+        quantity: 2,
+        core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
     ]
@@ -132,7 +148,9 @@ const serviceList = [
         id: 12,
         serviceID: 5,
         name: 'Filter OP-595',
-        price: 150,
+        price: 75,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -141,6 +159,8 @@ const serviceList = [
         serviceID: 5,
         name: 'sealer AR-5938',
         price: 10,
+        quantity: 1,
+        core: 1,
         type: 'In-house',
         select: false
       },
@@ -149,6 +169,8 @@ const serviceList = [
         serviceID: 5,
         name: 'bolt 6x40',
         price: 2,
+        quantity: 31,
+        core: 11,
         type: 'Manufacturers',
         select: false
       }
@@ -173,7 +195,9 @@ const serviceList = [
         id: 12,
         serviceID: 5,
         name: 'Filter OP-595',
-        price: 150,
+        price: 20,
+        quantity: 11,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -182,6 +206,8 @@ const serviceList = [
         serviceID: 5,
         name: 'sealer AR-5938',
         price: 10,
+        quantity: 4,
+        core: 3,
         type: 'In-house',
         select: false
       },
@@ -189,7 +215,9 @@ const serviceList = [
         id: 14,
         serviceID: 5,
         name: 'bolt 6x40',
-        price: 2,
+        price: 22,
+        quantity: 4,
+        core: 1,
         type: 'Manufacturers',
         select: false
       }
@@ -217,6 +245,8 @@ const serviceList = [
         serviceID: 7,
         name: 'Engine air filter',
         price: 28.5,
+        quantity: 3,
+        core: 2,
         type: 'Warranty Claim',
         select: false
       }
@@ -245,6 +275,8 @@ const serviceList = [
         serviceID: 8,
         name: 'Cabin Air filter',
         price: 34.79,
+        quantity: 2,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       }
@@ -273,6 +305,8 @@ const serviceList = [
         serviceID: 9,
         name: '5901 Universal Cooling System Kit',
         price: 43.95,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       },
@@ -281,6 +315,8 @@ const serviceList = [
         serviceID: 9,
         name: 'Antifreeze (Khameleon)',
         price: 6.8,
+        quantity: 7,
+        core: 5,
         type: 'Warranty Claim',
         select: false
       },
@@ -289,6 +325,8 @@ const serviceList = [
         serviceID: 9,
         name: 'Environmental  Charge',
         price: 5.5,
+        quantity: 2,
+        core: 2,
         type: 'Warranty Claim',
         select: false
       }
@@ -317,6 +355,8 @@ const serviceList = [
         serviceID: 10,
         name: '516-000 Synthetic Automatic transmission fluid',
         price: 16.05,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -325,6 +365,8 @@ const serviceList = [
         serviceID: 10,
         name: '6600 transmission service kit',
         price: 46.65,
+        quantity: 2,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -333,6 +375,8 @@ const serviceList = [
         serviceID: 10,
         name: 'Environmental  Charge',
         price: 5.5,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -361,6 +405,8 @@ const serviceList = [
         serviceID: 11,
         name: '6700 Power steering flush Kit includes fluid',
         price: 82.86,
+        quantity: 1,
+        core: 10,
         type: 'Warranty Claim',
         select: false
       },
@@ -369,6 +415,8 @@ const serviceList = [
         serviceID: 11,
         name: 'Enviromental Charge',
         price: 5.5,
+        quantity: 1,
+        core: 10,
         type: 'Warranty Claim',
         select: false
       }
@@ -396,6 +444,8 @@ const serviceList = [
         serviceID: 12,
         name: 'Spark plugs',
         price: 16.75,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       },
@@ -404,6 +454,8 @@ const serviceList = [
         serviceID: 12,
         name: 'Ignition coil boots',
         price: 22.5,
+        quantity: 3,
+        core: 2,
         type: 'Warranty Claim',
         select: false
       },
@@ -412,6 +464,8 @@ const serviceList = [
         serviceID: 12,
         name: 'Injector cleaning kit',
         price: 76.89,
+        quantity: 5,
+        core: 19,
         type: 'Warranty Claim',
         select: false
       },
@@ -420,6 +474,8 @@ const serviceList = [
         serviceID: 12,
         name: 'Engine tuneup service kit',
         price: 24,
+        quantity: 5,
+        core: 15,
         type: 'Warranty Claim',
         select: false
       }
@@ -448,6 +504,8 @@ const serviceList = [
         serviceID: 13,
         name: 'Timing belt',
         price: 156.98,
+        quantity: 1,
+        core: 15,
         type: 'Warranty Claim',
         select: false
       },
@@ -456,6 +514,8 @@ const serviceList = [
         serviceID: 13,
         name: 'Belt Tensioner',
         price: 78.1,
+        quantity: 5,
+        core: 6,
         type: 'Warranty Claim',
         select: false
       },
@@ -464,6 +524,8 @@ const serviceList = [
         serviceID: 13,
         name: 'Water pump',
         price: 134,
+        quantity: 1,
+        core: 10,
         type: 'Warranty Claim',
         select: false
       },
@@ -472,6 +534,8 @@ const serviceList = [
         serviceID: 13,
         name: 'Antifreeze',
         price: 6.3,
+        quantity: 2,
+        core: 5,
         type: 'Warranty Claim',
         select: false
       },
@@ -480,6 +544,8 @@ const serviceList = [
         serviceID: 13,
         name: 'Enviromental Charge',
         price: 5.5,
+        quantity: 6,
+        core: 9,
         type: 'Warranty Claim',
         select: false
       }
@@ -508,6 +574,8 @@ const serviceList = [
         serviceID: 14,
         name: '2991 Platinum Fuel Service Kit #2',
         price: 179.07,
+        quantity: 1,
+        core: 14,
         type: 'Warranty Claim',
         select: false
       },
@@ -516,6 +584,8 @@ const serviceList = [
         serviceID: 14,
         name: 'Enviromental charge',
         price: 5.5,
+        quantity: 21,
+        core: 3,
         type: 'Warranty Claim',
         select: false
       }
@@ -544,6 +614,8 @@ const serviceList = [
         serviceID: 15,
         name: '84032 Dot 4 Brake Fluid',
         price: 38.65,
+        quantity: 2,
+        core: 12,
         type: 'Warranty Claim',
         select: false
       },
@@ -552,6 +624,8 @@ const serviceList = [
         serviceID: 15,
         name: 'Enviromental charge',
         price: 5.5,
+        quantity: 1,
+        core: 14,
         type: 'Warranty Claim',
         select: false
       }
@@ -580,6 +654,8 @@ const serviceList = [
         serviceID: 16,
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs)',
         price: 19.04,
+        quantity: 5,
+        core: 13,
         type: 'Warranty Claim',
         select: false
       }
@@ -608,6 +684,8 @@ const serviceList = [
         serviceID: 17,
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs) (#BHSK)',
         price: 19.04,
+        quantity: 10,
+        core: 7,
         type: 'Warranty Claim',
         select: false
       }
@@ -635,6 +713,8 @@ const serviceList = [
         serviceID: 18,
         name: 'XC19 Wiper blade',
         price: 19.25,
+        quantity: 3,
+        core: 31,
         type: 'Warranty Claim',
         select: false
       },
@@ -643,6 +723,8 @@ const serviceList = [
         serviceID: 18,
         name: 'XC21 Wiper blade',
         price: 24.78,
+        quantity: 2,
+        core: 19,
         type: 'Warranty Claim',
         select: false
       }
@@ -670,6 +752,8 @@ const serviceList = [
         serviceID: 19,
         name: '9005 Bulb',
         price: 16.9,
+        quantity: 10,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -697,6 +781,8 @@ const serviceList = [
         serviceID: 20,
         name: '796MF battery',
         price: 156.98,
+        quantity: 4,
+        core: 34,
         type: 'Warranty Claim',
         select: false
       }
@@ -725,6 +811,8 @@ const serviceList = [
         serviceID: 21,
         name: 'P205/65R16 General RT40 Tires',
         price: 145.89,
+        quantity: 34,
+        core: 13,
         type: 'Warranty Claim',
         select: false
       },
@@ -733,6 +821,8 @@ const serviceList = [
         serviceID: 21,
         name: 'Tire service kit -per wheel (includes wheel weights, valve stems, cleaners, rim cleaning disc)',
         price: 8.08,
+        quantity: 32,
+        core: 7,
         type: 'Warranty Claim',
         select: false
       }
@@ -761,6 +851,8 @@ const serviceList = [
         serviceID: 22,
         name: 'P205/65R16 Michelin X-ice Tires',
         price: 198,
+        quantity: 2,
+        core: 5,
         type: 'Warranty Claim',
         select: false
       },
@@ -769,6 +861,8 @@ const serviceList = [
         serviceID: 22,
         name: 'Tire service kit -per wheel (includes wheel weights, valve stems, cleaners, rim cleaning disc)',
         price: 8.08,
+        quantity: 2,
+        core: 9,
         type: 'Warranty Claim',
         select: false
       }
@@ -796,6 +890,8 @@ const serviceList = [
         serviceID: 23,
         name: 'YH12367 Accessories drive belt',
         price: 65.89,
+        quantity: 4,
+        core: 90,
         type: 'Warranty Claim',
         select: false
       }
@@ -824,6 +920,8 @@ const serviceList = [
         serviceID: 24,
         name: '20 ft 3/16 Brake line',
         price: 12.09,
+        quantity: 8,
+        core: 2,
         type: 'Warranty Claim',
         select: false
       },
@@ -832,6 +930,8 @@ const serviceList = [
         serviceID: 24,
         name: 'Brake fittings',
         price: 6.09,
+        quantity: 14,
+        core: 12,
         type: 'Warranty Claim',
         select: false
       },
@@ -840,6 +940,8 @@ const serviceList = [
         serviceID: 24,
         name: 'Brake line and fitting service kit. (fittings, brake lines, connectors, plastic ties, cleaners, undercoating)',
         price: 68,
+        quantity: 3,
+        core: 12,
         type: 'Warranty Claim',
         select: false
       }
@@ -867,6 +969,8 @@ const serviceList = [
         serviceID: 25,
         name: 'XC 1897 Front brake pads',
         price: 123.98,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -875,6 +979,8 @@ const serviceList = [
         serviceID: 25,
         name: 'YC 1246789 Front brake rotors',
         price: 67.98,
+        quantity: 2,
+        core: 13,
         type: 'Warranty Claim',
         select: false
       },
@@ -883,6 +989,8 @@ const serviceList = [
         serviceID: 25,
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         price: 19.09,
+        quantity: 6,
+        core: 7,
         type: 'Warranty Claim',
         select: false
       }
@@ -910,6 +1018,8 @@ const serviceList = [
         serviceID: 26,
         name: 'PXD1602H Rear brake pads',
         price: 109.5,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -918,6 +1028,8 @@ const serviceList = [
         serviceID: 26,
         name: 'YH421758P Rear brake rotors',
         price: 212.61,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -926,6 +1038,8 @@ const serviceList = [
         serviceID: 26,
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs) (#BHSK)',
         price: 19.09,
+        quantity: 2,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       }
@@ -953,6 +1067,8 @@ const serviceList = [
         serviceID: 27,
         name: '172889 Front strut',
         price: 379.82,
+        quantity: 2,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -961,6 +1077,8 @@ const serviceList = [
         serviceID: 27,
         name: '172888 Front strut',
         price: 379.82,
+        quantity: 1,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       },
@@ -969,6 +1087,8 @@ const serviceList = [
         serviceID: 27,
         name: '37302 Rear shock',
         price: 114.28,
+        quantity: 2,
+        core: 3,
         type: 'Warranty Claim',
         select: false
       },
@@ -977,6 +1097,8 @@ const serviceList = [
         serviceID: 27,
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
+        quantity: 12,
+        core: 1,
         type: 'Warranty Claim',
         select: false
       }
@@ -1005,6 +1127,8 @@ const serviceList = [
         serviceID: 28,
         name: 'RK620487',
         price: 246.51,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       },
@@ -1013,6 +1137,8 @@ const serviceList = [
         serviceID: 28,
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
+        quantity: 2,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -1048,6 +1174,8 @@ const serviceList = [
         serviceID: 29,
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -1076,6 +1204,8 @@ const serviceList = [
         serviceID: 30,
         name: '510063 Front wheel bearing',
         price: 120.46,
+        quantity: 3,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       },
@@ -1084,6 +1214,8 @@ const serviceList = [
         serviceID: 30,
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
+        quantity: 7,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -1111,6 +1243,8 @@ const serviceList = [
         serviceID: 31,
         name: '194 Bulb',
         price: 9.89,
+        quantity: 10,
+        core: 4,
         type: 'Warranty Claim',
         select: false
       }
@@ -1148,6 +1282,8 @@ const serviceList = [
         serviceID: 32,
         name: 'Part: 20 ft 3/16 Brake line',
         price: 6.09,
+        quantity: 4,
+        core: 7,
         type: 'Warranty Claim',
         quantity: 6,
         select: false
@@ -1157,6 +1293,8 @@ const serviceList = [
         serviceID: 32,
         name: 'Part: Brake line and fitting service kit. (fittings, brake lines, connectors, plastic ties, cleaners, undercoating)',
         price: 68,
+        quantity: 2,
+        core: 7,
         type: 'Warranty Claim',
         quantity: 1,
         select: false
@@ -1186,6 +1324,7 @@ const serviceList = [
         name: 'XC 1897 Front brake pads',
         price: 123.98,
         quantity: 1,
+        core: 30.55,
         type: 'Warranty Claim',
         select: false
       },
@@ -1195,6 +1334,7 @@ const serviceList = [
         name: 'YC 1246789 Front brake rotors',
         price: 67.98,
         quantity: 2,
+        core: 30.55,
         type: 'Warranty Claim',
         select: false
       },
@@ -1252,7 +1392,7 @@ const serviceList = [
         id: 74,
         serviceID: 34,
         name: 'Exhaust service kit (oxygen/acetylene, clamps, gaskets, welding wire, nuts, bolts, exhaust hanger rod) (#EXSK)',
-        core: 0,
+        core: 2,
         quantity: 1,
         price: 52,
         type: 'Warranty Claim',
@@ -1262,7 +1402,7 @@ const serviceList = [
         id: 75,
         serviceID: 34,
         name: 'Exhaust extension pipe from y pipe to intermediate pipe',
-        core: 0,
+        core: 1,
         quantity: 1,
         price: 43.63,
         type: 'Warranty Claim',
@@ -1272,8 +1412,8 @@ const serviceList = [
         id: 76,
         serviceID: 34,
         name: 'Intermediate pipe',
-        core: 0,
-        quantity: 1,
+        core: 1,
+        quantity: 2,
         price: 41.4,
         type: 'Warranty Claim',
         select: false
@@ -1282,8 +1422,8 @@ const serviceList = [
         id: 77,
         serviceID: 34,
         name: 'Tail pipe',
-        core: 0,
-        quantity: 1,
+        core: 2,
+        quantity: 3,
         price: 131.67,
         type: 'Warranty Claim',
         select: false
@@ -1292,9 +1432,9 @@ const serviceList = [
         id: 78,
         serviceID: 34,
         name: '21539- Muffler',
-        core: 0,
-        quantity: 1,
-        price: 404.38,
+        core: 3,
+        quantity: 3,
+        price: 34.38,
         type: 'Warranty Claim',
         select: false
       }

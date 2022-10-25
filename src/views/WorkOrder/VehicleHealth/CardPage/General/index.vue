@@ -9,6 +9,7 @@
         <Service v-for="service of chooseServices" :key="service.id" :service="service" />
       </div>
       <div v-if="services.length" class="block__services services">
+        <div class="block__toggle">View all Canned Services <i class="i-keyboard_arrow_down" /></div>
         <div class="block__header">
           <div class="block__title">Canned Services</div>
           <button class="block__btn" @click="open"><i class="i-add_circle" /><span>Create New Canned Service</span></button>

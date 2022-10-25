@@ -2,21 +2,13 @@
   <div class="section__wrapper">
     <div class="section__header"></div>
     <div class="section__body">
-      <div class="section__subheader">
-        <span></span>
-        <span>Part Description</span>
-        <span>Core</span>
-        <span>Quantity</span>
-        <span>Price</span>
-        <span>Total</span>
-        <span>Parts Markup</span>
-      </div>
       <div class="section__parts">
         <Part v-for="(part, idx) of parts" :key="idx" :part="part" @select="select" />
         <NewPart v-if="isNew" @close="isNew = false" />
-        <button v-if="!isNew" class="section__btn" @click="isNew = true"><i class="i-add_circle" /><span>Add New part</span></button>
+        <div v-if="!isNew" class="section__btn" @click="isNew = true"><i class="i-add_circle" /><span>Add new part</span></div>
       </div>
     </div>
+
     <Dialog v-model:visible="display" :dismissableMask="false" position="bottom" :closeOnEsc="false" :modal="false" draggable class="dialog__wrapper">
       <template v-slot="{initDrag}">
         <div class="dialog__inner">
@@ -63,9 +55,11 @@ export default {
       display: false,
       types: ['Warranty Claim', 'In-house', 'Manufacturers'],
       type: 'Warranty Claim',
-      isNew: false
+      isNew: false,
+      name: null
     }
   },
+
   computed: {
     ...mapState({
       service: s => s.company.cannedServices.activeService

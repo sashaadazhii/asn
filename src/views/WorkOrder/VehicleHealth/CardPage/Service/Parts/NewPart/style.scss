@@ -10,9 +10,9 @@
     display: grid;
     align-items: center;
     column-gap: 12px;
-    grid-template-columns: 16px 3fr repeat(4, minmax(80px, 1fr)) 160px;
+    grid-template-columns: 16px 5fr repeat(2, minmax(50px, 1fr)) repeat(1, minmax(80px, 1fr)) 160px;
     & > span {
-      @include font(16px, $color-grey-space, 600);
+      @include font(14px, $color-grey-space, 700);
     }
   }
   &__footer {

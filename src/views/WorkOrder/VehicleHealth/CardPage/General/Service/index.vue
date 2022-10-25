@@ -1,29 +1,39 @@
 <template>
-  <div class="service__wrapper" @click="open">
+  <div class="service__wrapper" :class="{active: service.select}" @click="open">
     <div class="y-radio" :class="{active: service.select}" @click.stop="chose" />
     <span>{{ service.name }}</span>
-    <Label :label="service.parts.length" border circle class="-grey -counter" />
+    <Label :label="service.parts.length" circle class="-grey -counter" color="#fff" />
     <Label
       :label="`${service.estimatedTime} hr`"
       icon="i-time"
       iconColor="#3EB3BB"
       iconSize="18px"
+      size="large"
+      class="-grey"
+      color="#fff"
+      v-tooltip.bottom="'Estimated time'"
+    />
+    <Label
+      :label="`${service.averageTime} hr`"
+      icon="i-time orange"
+      iconSize="18px"
       border
       size="large"
       class="-grey"
-      v-tooltip.bottom="'Estimated time'"
+      color="#fff"
+      v-tooltip.bottom="'Average time'"
     />
-    <Label :label="`${service.averageTime} hr`" icon="i-time orange" iconSize="18px" border size="large" class="-grey" v-tooltip.bottom="'Average time'" />
-    <Label :label="`${service.used}`" border size="large" class="-grey -counter" v-tooltip.bottom="'Number of times used'" />
-    <Label
+    <Label :label="`${service.used} times`" size="large" class="-grey -counter" color="#fff" v-tooltip.bottom="'Number of times used'" />
+    <!-- <Label
       :label="`${service.warranty?.time || 0} Months /  ${service.warranty?.range.toLocaleString('fr-FR') || 0} KM`"
       :icon="labelIcon"
       iconSize="18px"
       border
       size="large"
       class="-grey"
+      color="#fff"
       v-tooltip.bottom="'Warranty'"
-    />
+    /> -->
     <div @click.stop>
       <Menu :list="actionsList">
         <template #menu @click.stop>
