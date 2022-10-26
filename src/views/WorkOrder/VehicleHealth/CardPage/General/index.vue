@@ -8,14 +8,21 @@
         </div>
         <Service v-for="service of chooseServices" :key="service.id" :service="service" />
       </div>
+
       <div v-if="services.length" class="block__services services">
-        <div class="block__toggle">View all Canned Services <i class="i-keyboard_arrow_down" /></div>
-        <div class="block__header">
+        <div v-if="chooseServices.length" class="block__toggle" @click="isActive = !isActive">
+          {{ isActive ? 'Hide' : 'View' }} all Canned Services
+          <i class="i-keyboard_arrow_down" :style="[isActive ? {transform: 'rotateX(180deg)'} : {transform: 'rotateX(0)'}]" />
+        </div>
+      </div>
+      <div v-if="(services.length && !chooseServices.length) || isActive" class="block__toggle-inner">
+        <div v-if="services.length" class="block__header">
           <div class="block__title">Canned Services</div>
           <button class="block__btn" @click="open"><i class="i-add_circle" /><span>Create New Canned Service</span></button>
         </div>
         <Service v-for="service of services" :key="service.id" :service="service" />
       </div>
+
       <div v-if="history.length && $route.params.uid !== 'tech-start'" class="block__history history">
         <div class="block__header">
           <div class="block__title">Service History</div>
@@ -37,7 +44,9 @@ export default {
   name: 'CardPageGeneral',
   components: {Service, History, Tires},
   data() {
-    return {}
+    return {
+      isActive: false
+    }
   },
   async created() {
     const cardID = this.card.id
