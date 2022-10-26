@@ -7,8 +7,8 @@
       <div class="part__subtitle">{{ serviceName }}</div>
     </div>
     <div class="part__right">
-      <input v-model="quantity" type="text" class="part__input" />
-      <input v-model="price" type="text" class="part__input" />
+      <input v-model="quantity" type="text" class="part__input" v-maska="'####'" />
+      <input v-model="price" type="text" class="part__input" v-maska="{mask: 'HHHHHHHH', tokens: {H: {pattern: /[0-9.]/}}}" />
       <div class="part__title">{{ formatter(total) }}</div>
       <Menu :list="actionsList">
         <template #menu @click.stop>

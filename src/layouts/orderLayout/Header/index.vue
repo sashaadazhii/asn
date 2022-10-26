@@ -30,6 +30,8 @@
       <div v-if="!isStart" class="header__timer" :class="{'-start': isStart}" @click="start">
         <div v-if="!isStart" class="header__timer-start"><i class="i-play_circle_filled" /> <span>Start Work Order</span></div>
       </div>
+      <div v-if="cardsApproved && isStart"><Button label="Send for customer approval" icon="i-check_circle" class="mint" color="#10B981" /></div>
+
       <Button icon="i-circle_close" border circle size="small" @click="close" />
     </div>
   </div>
@@ -49,16 +51,28 @@ export default {
       uid: this.$route.params.uid,
       isNew: true,
       isStart: false,
-      isFlow: false
+      isFlow: false,
+      cardsApproved: false
     }
   },
-  created() {
+  async created() {
     if (this.uid !== 'new') this.isNew = false
+    await this.fetch()
   },
   computed: {
     ...mapState({
-      order: s => s.workOrder.workOrder
+      order: s => s.workOrder.workOrder,
+      cards: s => s.company.cards.cards
     })
+  },
+  watch: {
+    cards: {
+      handler(cards) {
+        if (cards.filter(c => c.status === 'No Status').length === 0) this.cardsApproved = true
+        else this.cardsApproved = false
+      },
+      deep: true
+    }
   },
   methods: {
     ...mapMutations({
@@ -66,7 +80,8 @@ export default {
       // add: 'workOrder/add'
     }),
     ...mapActions({
-      create: 'workOrder/create'
+      create: 'workOrder/create',
+      fetch: 'company/cards/fetch'
     }),
     async createOrder() {
       await this.create(this.order)

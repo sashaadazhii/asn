@@ -52,9 +52,8 @@
   &__input {
     position: relative;
     width: 100%;
-    // max-width: 110px;
     height: 34px;
-    padding: 10px 20px;
+    padding: 10px 6px;
     @include border(8px);
     background-color: $color-grey-smoke;
     @include font(14px, $color-grey-space, 700);

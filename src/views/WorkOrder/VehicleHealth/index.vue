@@ -143,7 +143,8 @@ export default {
       display: false,
       showRequests: false,
       bin: null,
-      isActive: false
+      isActive: false,
+      cardsApproved: false
     }
   },
   async created() {
@@ -227,6 +228,8 @@ export default {
         this.allSelected = cards.every(c => c.select)
         if (this.cards.some(c => c.select)) this.display = true
         else this.display = false
+
+        if (cards.filter(c => c.status === 'No Status').length === 0) this.cardsApproved = true
       },
       deep: true
     },
@@ -239,6 +242,7 @@ export default {
     ...mapActions({
       fetch: 'company/cards/fetch',
       fetchRequests: 'requests/fetch'
+      // findOrder: 'workOrder/find'
     }),
     ...mapMutations({
       setSort: 'company/cards/setSort',
@@ -283,14 +287,17 @@ export default {
       this.setCard(card)
       if (!this.isChecked) return
       else
-        this.$vfm.show({
-          component: CardPage,
-          bind: {
-            name: 'CardPage',
-            'click-to-close': false,
-            'esc-to-close': true
+        this.$vfm.show(
+          {
+            component: CardPage,
+            bind: {
+              name: 'CardPage',
+              'click-to-close': false,
+              'esc-to-close': true
+            }
           }
-        })
+          // this.order
+        )
     },
     changeSearch(searchValue) {
       this.setSearch(searchValue)

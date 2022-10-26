@@ -85,7 +85,10 @@ const workOrders = {
       timePromised: new Date('12 Jul 2:00 PM'),
       // startsAt: new Date('10 Jul 8:00 AM 2022'),
       // endsAt: new Date('12 Jul 2:00 PM'),
-      logicalStatus: 'Not Started'
+      logicalStatus: 'Not Started',
+      quotes: {brakePadLeft: '5.2mm', brakePadRight: '6.3mm'},
+      technicianNotes:
+        'Technician is writing a bunch of notes right here. Technician is writing a bunch of notes right here.Technician is writing a bunch of notes right here.Technician is writing a bunch of notes right here.'
     }
     // {
     //   uid: '9511f190-ade4-4f07-9f1c-04773fb63947',

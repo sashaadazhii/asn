@@ -1,11 +1,11 @@
 <template>
   <div class="history__block">
     <div class="history__header">
-      <Label :label="card.date" class="-light" />
+      <Label :label="card.date" color="#E5E7EB" class="dark" />
       <span>Front Brake Service</span>
-      <Label :label="card.type" size="small" />
+      <Label :label="card.type" size="mini" class="-smooth" />
     </div>
-    <div class="history__body">{{card.description}}</div>
+    <div class="history__body">{{ card.description }}</div>
   </div>
 </template>
 

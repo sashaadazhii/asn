@@ -3,9 +3,8 @@
     <div class="part__main">
       <i class="i-build" />
       <Input v-model="name" size="small" placeholder="Name" />
-      <Input v-model="core" size="small" placeholder="Core" />
-      <Input v-model="quantity" size="small" placeholder="Quantity" />
-      <Input v-model="price" size="small" placeholder="Price" />
+      <Input v-model="quantity" size="small" placeholder="Quantity" v-maska="'####'" />
+      <Input v-model="price" size="small" placeholder="Price" v-maska="{mask: 'HHHHHHHH', tokens: {H: {pattern: /[0-9.]/}}}" />
       <span>${{ total }}</span>
     </div>
     <div class="part__footer">
@@ -32,7 +31,7 @@ export default {
   data() {
     return {
       name: null,
-      core: null,
+      // core: null,
       quantity: null,
       price: null
     }
@@ -50,12 +49,11 @@ export default {
       add: 'company/cannedServices/addPart'
     }),
     addPart() {
-      const {name, price, core, quantity} = this
+      const {name, price, quantity} = this
       const part = {
         serviceID: this.service.id,
         id: this.$getID(),
         name,
-        core,
         quantity,
         price,
         select: false

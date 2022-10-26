@@ -60,6 +60,7 @@ export default {
   methods: {
     ...mapActions({
       fetch: 'workOrder/fetchBoard',
+
       updateStatus: 'workOrder/updateStatus',
       scheduleOrder: 'workOrder/scheduleOrder',
       feetchStatuses: 'workOrder/status/fetch'

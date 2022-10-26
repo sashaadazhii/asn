@@ -12,7 +12,7 @@
       <div class="request__main-title">Customer Request</div>
       <div class="request__main-text">{{ request.notes }}</div>
     </div>
-    <div class="request__footer">
+    <!-- <div class="request__footer">
       <div class="request__footer-desc">
         <div class="request__footer-time">
           <i class="i-time" />
@@ -31,7 +31,7 @@
         <span />
         <span />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -147,6 +147,15 @@
       }
     }
   }
+  &.-smooth {
+    border-radius: 78px;
+  }
+  &.dark {
+    border-color: $color-grey-light;
+    & > .y-label__text {
+      color: $color-grey;
+    }
+  }
 }
 
 //==============================

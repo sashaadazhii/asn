@@ -283,6 +283,19 @@
       background-color: $color-grey-smoke;
     }
   }
+  &.mint {
+    background-color: $color-green-mint;
+    border-color: $color-green;
+    .y-button--label {
+      color: $color-green;
+    }
+    .y-button--icon {
+      color: $color-green;
+    }
+    &:hover,
+    &:active {
+    }
+  }
 }
 
 //==============================

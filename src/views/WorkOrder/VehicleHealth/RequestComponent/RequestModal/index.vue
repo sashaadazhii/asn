@@ -39,7 +39,7 @@
             </Menu>
           </div>
         </div>
-        <div class="body__request request">
+        <!-- <div class="body__request request">
           <div class="request__body">{{ request.notes }}</div>
           <div class="request__desc">
             <div class="request__time">
@@ -59,7 +59,7 @@
             <span />
             <span />
           </div>
-        </div>
+        </div> -->
         <div class="body__notes">
           <div>TECHNICIAN NOTES</div>
           <textarea placeholder="Start typing to add notes"></textarea>

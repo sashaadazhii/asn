@@ -1,5 +1,5 @@
 <template>
-  <vue-final-modal v-slot="{close}">
+  <vue-final-modal v-slot="{close}" @before-open="beforeOpen">
     <div class="modal__wrapper">
       <div class="modal__header">
         <div class="modal__header-left">
@@ -100,11 +100,11 @@
               <div class="request__header">
                 <span>Tech's Notes</span>
               </div>
-              <textarea v-model="notes" placeholder="Start typing here..." class="request__textarea"></textarea>
+              <textarea v-model="order.technicianNotes" placeholder="Start typing here..." class="request__textarea"></textarea>
             </div>
             <div class="request__dropdowns">
-              <Dropdown :modelValue="brakePad" :options="brakePads" size="medium" title="Brake Pad Width - Left" theme="white" />
-              <Dropdown :modelValue="brakePad" :options="brakePads" size="medium" title="Brake Pad Width - Right" theme="white" />
+              <Dropdown v-model="order.quotes.brakePadLeft" :options="brakePads" size="medium" title="Brake Pad Width - Left" theme="white" />
+              <Dropdown v-model="order.quotes.brakePadRight" :options="brakePads" size="medium" title="Brake Pad Width - Right" theme="white" />
             </div>
           </div>
         </div>
@@ -152,7 +152,9 @@ export default {
       request: {},
       notes: 'The cabin air filter in a vehicle helps remove harmful pollutants, including pollen and dust, from the air you breathe within the car.',
       brakePads: ['5mm', '5.5mm', '6mm', '6.5mm', '7mm', '7.5mm'],
-      brakePad: '5mm'
+      brakePadLeft: '5mm',
+      brakePadLRight: '5mm',
+      uid: null
     }
   },
   async created() {
@@ -169,8 +171,12 @@ export default {
       card: s => s.company.cards.card,
       cards: s => s.company.cards.cards,
       isStart: s => s.workOrder.isStart,
-      activeService: s => s.company.cannedServices.activeService
-    })
+      activeService: s => s.company.cannedServices.activeService,
+      order: s => s.workOrder.workOrder
+    }),
+    quotes() {
+      return this.order.quotes
+    }
   },
   watch: {
     activeService(s) {
@@ -180,7 +186,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      findRequest: 'requests/find'
+      findRequest: 'requests/find',
+      findOrder: 'workOrder/find'
     }),
     ...mapMutations({
       setCard: 'company/cards/changeCard',
@@ -188,6 +195,11 @@ export default {
       changeApprovalStatus: 'company/cards/changeApprovalStatus',
       setActiveService: 'company/cannedServices/setActiveService'
     }),
+    async beforeOpen(e) {
+      // this.uid = e.ref.params_rawValue
+      this.uid = this.$route.params.uid
+      await this.findOrder(this.uid)
+    },
     labelClass(status) {
       return {
         '-orange': status === 'Recommended',
