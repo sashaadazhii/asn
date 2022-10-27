@@ -278,6 +278,12 @@ const routes = [
         component: () => import('@/views/WorkOrder/VehicleHealth')
       },
       {
+        path: ':uid/vehicle-health/checkout',
+        name: 'WorkOrrderCheckout',
+        meta: {layout: 'order', access: ['admin', 'technician', 'service-advisor'], auth: true, header: 'WorkOrder'},
+        component: () => import('@/views/WorkOrder/Checkout')
+      },
+      {
         path: ':uid/vehicle-info',
         name: 'WorkOrderVehicleInfo',
         meta: {layout: 'order', access: ['admin', 'technician', 'service-advisor'], auth: true, header: 'WorkOrder'},
@@ -345,6 +351,14 @@ const routes = [
     name: 'Documentation',
     meta: {layout: 'admin', header: 'Documentation'},
     component: () => import('@/views/Documentation')
+  },
+  {
+    path: '/service-advisor',
+    name: 'SAView',
+    meta: {layout: 'order', access: ['admin', 'technician', 'service-advisor'], auth: true, header: 'WorkOrder'},
+    component: () => import('@/views/WorkOrder/AdvisorView'),
+
+    children: []
   }
 ]
 

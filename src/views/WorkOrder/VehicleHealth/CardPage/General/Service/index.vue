@@ -1,6 +1,7 @@
 <template>
   <div class="service__wrapper" :class="{active: service.select}" @click="open">
-    <div class="y-radio" :class="{active: service.select}" @click.stop="chose" />
+    <div v-if="isStart && card.status !== 'No Status'" class="y-radio" :class="{active: service.select}" @click.stop="chose" />
+    <div v-else></div>
     <span>{{ service.name }}</span>
     <Label :label="service.parts.length" circle class="-grey -counter" color="#fff" />
     <Label
@@ -67,12 +68,15 @@ export default {
           label: 'Edit',
           icon: 'i-edit'
         }
-      ]
+      ],
+      cannedServices: []
     }
   },
   computed: {
     ...mapState({
-      activeService: s => s.company.cannedServices.activeService
+      activeService: s => s.company.cannedServices.activeService,
+      isStart: s => s.workOrder.isStart,
+      card: s => s.company.cards.card
     }),
     labelIcon() {
       switch (this.service?.warrantyType) {
@@ -92,12 +96,20 @@ export default {
       set: 'company/cannedServices/setActiveService',
       select: 'company/cannedServices/select'
     }),
+
     open() {
       this.set(this.service)
     },
     chose() {
       const serviceID = this.service.id
       this.select(serviceID)
+      // if (!this.isStart) return
+      // else {
+      //   // console.log(this.isStart)
+      this.$emit('chose')
+      // }
+
+      this.$emit('unchoose')
     }
   },
   directives: {

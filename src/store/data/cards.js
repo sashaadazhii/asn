@@ -45,6 +45,7 @@ const cardsList = cards.data
       status: 'No Status',
       service: getRandom(0, 101),
       approvalStatus: approvalStatuses[getRandom(0, 1)],
+      advisorApprove: false,
       techs: [
         {
           id: 23483,

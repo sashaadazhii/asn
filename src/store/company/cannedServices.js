@@ -32,6 +32,7 @@ export default {
       const service = state.services.find(s => s.id === id)
       service.select = !service.select
     },
+
     update(state, service) {
       if (state.activeService.id) state.activeService = service
       const serIdx = state.services.findIndex(ser => ser.id === service.id)

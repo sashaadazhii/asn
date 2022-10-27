@@ -1,0 +1,58 @@
+@import 'src/assets/styles/_variables.scss';
+
+::v-deep() {
+  .vfm__container {
+    place-items: start center;
+  }
+  .vfm__content {
+    margin: 2% 0;
+    width: 96%;
+    max-width: 1060px;
+    border-radius: 20px;
+  }
+  .vfm--overlay {
+    background-color: rgba($color-grey, 0.4);
+  }
+}
+
+.modal {
+  &__wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    background-color: $color-grey-smoke;
+    overflow: hidden;
+    max-height: inherit;
+  }
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto 32px;
+    column-gap: 12px;
+    &-title {
+      @include font(18px, $color-grey-space, 600);
+    }
+  }
+  &__block {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    @include hideScrollbar;
+
+    &-title {
+      @include font(14px, $color-grey, 600);
+      margin-bottom: 18px;
+    }
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      row-gap: 10px;
+      margin-bottom: 3px;
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

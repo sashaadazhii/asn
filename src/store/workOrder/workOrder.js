@@ -47,7 +47,9 @@ export default {
         // =============== Questions =============
         // =============== Requests =============
         customRequests: null,
-        logicalStatus: 'Not Started'
+        logicalStatus: 'Not Started',
+        technicianNotes: '',
+        quotes: {brakePadLeft: '', brakePadRight: ''}
       }
       state.workOrder = order
     },

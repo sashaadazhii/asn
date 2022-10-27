@@ -1,0 +1,53 @@
+@import 'src/assets/styles/_variables.scss';
+.health {
+  &__wrapper {
+    background-color: $color-white;
+
+    height: inherit;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 0px rgba(48, 50, 73, 0.05);
+  }
+  &__header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    column-gap: 14px;
+    overflow: hidden;
+    padding: 10px;
+  }
+  &__table {
+    overflow: hidden;
+    height: inherit;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.table {
+  &__header {
+    display: grid;
+    // grid-template-columns: minmax(100px, 180px) minmax(120px, 180px) 200px minmax(100px, 204px) 20px;
+    grid-template-columns: 140px minmax(100px, 300px) 210px minmax(90px, 180px) minmax(300px, 360px) auto;
+    column-gap: 14px;
+    align-items: center;
+    padding: 14px 16px;
+    border-top: 1px solid $color-grey-flash;
+    border-bottom: 1px solid $color-grey-flash;
+    min-height: 46px;
+    &-cell {
+      @include font(12px, $color-grey, 500);
+    }
+    // &.-check {
+    //   grid-template-columns: 16px minmax(100px, 180px) minmax(200px, 2.2fr) minmax(100px, 204px) minmax(200px, 2fr);
+    // }
+  }
+  &__main {
+    overflow: auto;
+    @include hideScrollbar;
+  }
+}

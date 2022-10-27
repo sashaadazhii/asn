@@ -1,0 +1,95 @@
+@import 'src/assets/styles/_variables.scss';
+
+.service {
+  &__wrapper {
+    background-color: $color-white;
+    @include border(16px, $color-grey-flash);
+  }
+  &__header {
+    display: grid;
+    align-items: center;
+    column-gap: 10px;
+    grid-template-columns: 20px auto 1fr repeat(4, auto) 32px;
+    padding: 10px;
+    & > i {
+      @include font(20px, $color-grey);
+      cursor: pointer;
+      &.-revert {
+        transform: rotate(180deg);
+      }
+    }
+    & > span {
+      @include font(16px, $color-grey-space, 600);
+    }
+    & > .-grey {
+      border-color: $color-grey-flash;
+      color: $color-grey-space;
+    }
+    & > .-counter {
+      justify-self: start;
+      background-color: $color-grey-smoke;
+    }
+  }
+  &__desc {
+    padding: 20px;
+    border-top: 1px solid $color-grey-flash;
+    &-title {
+      @include font(12px, $color-grey, 600);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    &-text {
+      @include font(14px, $color-grey-space, 500, 1.4);
+    }
+  }
+  &__parts {
+    padding: 20px;
+    border-top: 1px solid $color-grey-flash;
+    &-header {
+      & > .-grey {
+        background-color: $color-grey-flash;
+      }
+    }
+    &-list {
+    }
+    &-item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 14px 1fr auto;
+      column-gap: 12px;
+      padding: 16px 0;
+
+      & > i {
+        @include font(14px, $color-grey-light);
+      }
+      & > span {
+        @include font(14px, $color-grey-space, 600);
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-grey-flash;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  &__type {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    height: 32px;
+    background-color: $color-grey-flash;
+    padding-left: 6px;
+    padding-right: 12px;
+    border-radius: 8px;
+    @include font(14px, $color-grey-space, 600);
+  }
+}
+
+.service__wrapper.-view {
+  .service {
+    &__header {
+      grid-template-columns: 20px auto 1fr repeat(4, auto);
+    }
+  }
+}

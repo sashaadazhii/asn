@@ -1,0 +1,145 @@
+@import 'src/assets/styles/_variables.scss';
+
+.card {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 140px minmax(100px, 300px) 210px minmax(90px, 180px) minmax(300px, 360px) auto;
+    column-gap: 14px;
+    align-items: center;
+    justify-items: self-end;
+    padding: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-flash;
+    }
+    & > div {
+      justify-self: start;
+    }
+
+    &:hover,
+    &:active {
+      background-color: rgba($color-grey-flash, 0.2);
+    }
+  }
+  &__title {
+    @include font(14px, $color-grey-space, 600);
+    position: relative;
+    & > i {
+      position: absolute;
+      @include font(16px, $color-blue);
+      left: -22px;
+      top: -2px;
+    }
+  }
+  &__label {
+    transition: opacity 0.2s ease-in-out;
+    &.-red {
+      background-color: $color-red;
+    }
+    &.-orange {
+      background-color: $color-orange;
+    }
+    &.-bluegreen {
+      background-color: $color-bluegreen;
+    }
+    &.-none {
+      border-color: $color-grey-flash;
+      background-color: $color-grey-smoke;
+      color: $color-grey;
+    }
+    &.-shadow {
+      padding-right: 10px;
+      &.-green {
+        background-color: $color-green-mint;
+        color: $color-green;
+        &.-border {
+          border-color: $color-green;
+        }
+      }
+      &.-red {
+        color: $color-red;
+        background-color: rgba($color-red, 0.1);
+      }
+      &.-purple {
+        color: $color-purple;
+        background-color: rgba($color-purple, 0.1);
+      }
+      &.-bluegreen {
+        color: $color-bluegreen;
+        background-color: rgba($color-bluegreen, 0.1);
+      }
+      &.-none {
+        border-color: transparent;
+        background-color: $color-grey-smoke;
+        color: $color-grey;
+      }
+    }
+    &.-hover {
+      &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+      }
+    }
+    &.-disabled {
+      opacity: 1 !important;
+      cursor: default !important;
+    }
+  }
+  &__progress {
+    justify-self: stretch !important;
+    height: 28px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+    background-color: $color-grey-smoke;
+    padding: 0 10px;
+    @include border(8px, $color-grey-flash);
+    &-title {
+      @include font(12px, $color-grey-space, 600);
+    }
+    &-bar {
+      height: 4px;
+      background-color: $color-grey-flash;
+      border-radius: 4px;
+      position: relative;
+      & > span {
+        position: absolute;
+        left: 0;
+        height: 4px;
+        background-color: $color-green;
+        border-radius: 4px;
+        &.-red {
+          background-color: $color-red;
+        }
+        &.-orange {
+          background-color: $color-orange;
+        }
+      }
+    }
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 6px 10px;
+    @include border(26px);
+    background-color: $color-grey-smoke;
+    @include font(12px, $color-grey, 600);
+    transition: 0.2s ease-in-out;
+    & > i {
+      font-size: 12px;
+      color: $color-grey;
+    }
+
+    &.green {
+      border-color: $color-green;
+      color: $color-green;
+      background-color: $color-green-mint;
+      & > i {
+        color: $color-green;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'src/assets/styles/_variables.scss';
+
+.card {
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    grid-template-columns: 24px auto minmax(200px, 1fr) 1fr;
+    column-gap: 12px;
+    padding: 12px 16px;
+    background-color: $color-white;
+    @include border(16px, $color-grey-flash);
+    box-shadow: 0px 3px 0px rgba($color-grey-space, 0.05);
+  }
+  &__icon {
+    display: grid;
+    place-items: center;
+    & > i {
+      cursor: pointer;
+      @include font(24px, $color-grey);
+    }
+  }
+  &__Label {
+    &.-grey {
+      background-color: $color-grey;
+    }
+    &.-border {
+      background-color: $color-grey-smoke;
+      border-color: $color-grey-flash;
+      color: $color-grey-space;
+    }
+  }
+  &__name {
+    @include font(14px, $color-grey-space, 600);
+  }
+}

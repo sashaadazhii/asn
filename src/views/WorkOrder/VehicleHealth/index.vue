@@ -285,7 +285,7 @@ export default {
     },
     openCard(card) {
       this.setCard(card)
-      if (!this.isChecked) return
+      if (!this.isChecked && this.isStart) return
       else
         this.$vfm.show(
           {

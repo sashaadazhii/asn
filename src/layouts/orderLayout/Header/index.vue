@@ -30,7 +30,12 @@
       <div v-if="!isStart" class="header__timer" :class="{'-start': isStart}" @click="start">
         <div v-if="!isStart" class="header__timer-start"><i class="i-play_circle_filled" /> <span>Start Work Order</span></div>
       </div>
-      <div v-if="cardsApproved && isStart"><Button label="Send for customer approval" icon="i-check_circle" class="mint" color="#10B981" /></div>
+      <div v-if="cardsApproved && isStart">
+        <!-- <router-link :to="`/work-order/${uid}/vehicle-health/checkout`"> -->
+        <router-link :to="`/service-advisor`">
+          <Button label="Ready for Service Advisor Review" icon="i-check_circle" class="mint" color="#10B981" />
+        </router-link>
+      </div>
 
       <Button icon="i-circle_close" border circle size="small" @click="close" />
     </div>
@@ -85,7 +90,6 @@ export default {
     }),
     async createOrder() {
       await this.create(this.order)
-      console.log(this.order)
     },
     statusClass(status) {
       return {

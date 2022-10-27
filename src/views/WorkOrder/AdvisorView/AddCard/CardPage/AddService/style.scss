@@ -1,0 +1,143 @@
+@import 'src/assets/styles/_variables.scss';
+
+::v-deep(.vfm__content) {
+  width: 96%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 84px rgba(99, 99, 112, 0.16);
+}
+
+.modal {
+  &__wrapper {
+    overflow: hidden;
+    max-height: inherit;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 30px;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color-lightgrey;
+  }
+  &__title {
+    @include font(20px, $color-space, 600);
+  }
+  &__close {
+    padding: 6px;
+    @include border(50%);
+    @include font(18px, $color-grey);
+    background-color: rgba($color-lightgrey, 0.6);
+    height: 32px;
+    width: 32px;
+    display: grid;
+    place-items: center;
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    overflow-y: auto;
+    @include hideScrollbar;
+    position: relative;
+  }
+  &__footer {
+  }
+  &__button {
+    margin-top: 30px;
+    background-color: $color-green;
+    width: 100%;
+    padding: 16px;
+    @include font(16px, $color-white, 700);
+    border-radius: 12px;
+  }
+}
+
+.field {
+  &__label {
+  }
+  &__title {
+    @include font(14px, $color-space, 600);
+    margin-bottom: 12px;
+  }
+  &__text {
+    @include font(14px, $color-space, 500);
+    padding: 14px;
+    background-color: rgba($color-lightgrey, 0.2);
+    @include border;
+    width: 100%;
+    resize: none;
+    height: 90px;
+    &::placeholder {
+      color: $color-grey;
+    }
+  }
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font(14px, $color-space, 500);
+    padding: 9px 14px;
+    background-color: rgba($color-lightgrey, 0.2);
+    @include border;
+    width: 100%;
+    &-dec,
+    &-inc {
+      line-height: 0;
+      padding: 6px;
+      border-radius: 50%;
+      background-color: $color-green;
+      color: $color-white;
+      cursor: pointer;
+      &.disabled {
+        cursor: not-allowed;
+        background-color: $color-lightgrey;
+        color: $color-grey;
+      }
+    }
+    &-text {
+      @include font(14px, $color-space, 600);
+    }
+  }
+  &__select {
+    &-option,
+    &-label {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      & > i {
+        font-size: 18px;
+        &.blue {
+          color: $color-blue;
+        }
+        &.red {
+          color: $color-red;
+        }
+        &.green {
+          color: $color-green;
+        }
+      }
+      & > span {
+        @include font(14px, $color-space, 500);
+      }
+    }
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  background-color: transparent;
+  @include font(14px, $color-space, 600);
+  & + span {
+    margin-left: -6px;
+    @include font(14px, $color-space, 600);
+  }
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

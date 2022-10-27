@@ -1,0 +1,180 @@
+@import 'src/assets/styles/_variables.scss';
+
+::v-deep() {
+  .vfm__container {
+    place-items: start center;
+  }
+  .vfm__content {
+    margin: 2% 0;
+    width: 96%;
+    max-width: 960px;
+    border-radius: 20px;
+  }
+  .vfm--overlay {
+    background-color: rgba($color-grey, 0.4);
+  }
+}
+
+.modal {
+  &__wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    background-color: $color-grey-smoke;
+    overflow: hidden;
+    max-height: inherit;
+  }
+  &__header {
+    &-title {
+      @include font(18px, $color-grey-space, 600);
+    }
+    &-top {
+      display: grid;
+      grid-template-columns: 32px auto auto 1fr 32px;
+      column-gap: 12px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid $color-grey-flash;
+    }
+    &-bottom {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      margin-top: 18px;
+      & > .-white {
+        background-color: $color-white;
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    &-label {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      height: 34px;
+      background-color: $color-grey;
+      border-radius: 34px;
+      column-gap: 10px;
+      cursor: pointer;
+      @include font(14px, $color-white, 600);
+      & > i {
+        font-size: 16px;
+      }
+      &.-green {
+        background-color: $color-green;
+        padding-left: 8px;
+      }
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+      & > span {
+        @include font(14px, $color-grey-space, 500);
+        & > span {
+          font-weight: 700;
+        }
+      }
+      & > .-grey {
+        border-color: $color-grey-flash;
+        background-color: $color-grey-smoke;
+        color: $color-grey;
+      }
+    }
+  }
+  &__main {
+    overflow-y: auto;
+    @include hideScrollbar;
+  }
+  &__services {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    flex-grow: 1;
+
+    & > button {
+      align-self: start;
+      background-color: $color-grey-flash;
+    }
+  }
+}
+
+.modal__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 18px;
+  &-part {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding-bottom: 3px;
+  }
+  &-block {
+    background-color: $color-white;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 0px rgba($color-grey-space, 0.05);
+    &.-service {
+      & > .-border {
+        border-color: $color-grey-flash;
+        color: $color-grey-space;
+        margin-right: 8px;
+        box-shadow: 0px 3px 0px rgba($color-grey-space, 0.05);
+      }
+    }
+
+    &.-details {
+    }
+    .-desc {
+    }
+  }
+}
+
+.info {
+  &__title {
+    @include font(14px, $color-grey-space, 600);
+    margin-bottom: 16px;
+    & > span {
+      color: $color-grey;
+    }
+  }
+  &__block {
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-flash;
+      padding-bottom: 2px;
+    }
+    &:last-child {
+      padding-top: 16px;
+    }
+  }
+  &__row {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 130px 1fr;
+    column-gap: 8px;
+    margin-bottom: 14px;
+  }
+  &__label {
+    @include font(14px, $color-grey, 500);
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    & > i {
+      @include font(16px, $color-grey-light);
+    }
+    & > span {
+      @include font(14px, $color-grey-space, 600);
+    }
+    & > .-dark {
+      background-color: $color-grey-dark;
+    }
+  }
+  &__desc {
+    @include font(14px, $color-grey-space, 500, 1.4);
+  }
+}
