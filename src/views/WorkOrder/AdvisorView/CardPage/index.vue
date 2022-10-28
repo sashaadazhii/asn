@@ -135,6 +135,10 @@
               <textarea class="block__textarea green"></textarea>
 
               <div class="block__inner">
+                <div class="block__inner-header">
+                  <div class="block__inner-title">Customer display settings</div>
+                  <div class="block__inner-icon"><i class="i-keyboard_arrow_down" /></div>
+                </div>
                 <div v-for="(option, idx) in customerOptions" :key="option" class="option" :class="{active: idx === activeOptionIdx}" @click.stop="select(idx)">
                   <div class="option__left">
                     <div class="y-radio" :class="{active: idx === activeOptionIdx}" />
@@ -156,11 +160,27 @@
                   </div>
                 </div>
               </div>
+              <div class="parts">
+                <Part v-for="part in parts" :key="part.uid" :part="part" />
+              </div>
             </div>
           </div>
-
-          <div class="parts">
-            <Part v-for="part in parts" :key="part.uid" :part="part" />
+          <div class="block">
+            <div class="block__header">
+              <div class="block__header-left">
+                <Label alias="4" size="large" color="#F37878" />
+                <div class="block__title">Denial messages:</div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block__header">
+              <div class="block__header-left">
+                <Label alias="5" size="large" color="#3EB3BB" />
+                <div class="block__title">Warranty:</div>
+              </div>
+            </div>
+            <div class="block__main"></div>
           </div>
         </div>
 
