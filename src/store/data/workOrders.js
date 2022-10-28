@@ -573,7 +573,8 @@ const requests = [
   {
     id: 2,
     // workOrderID: 1,
-    status: 'Not Processed',
+    status: 'Done',
+    // status: 'Not Processed',
     techs: [
       {
         id: 23483,
@@ -589,7 +590,8 @@ const requests = [
   {
     id: 3,
     // workOrderID: 1,
-    status: 'Not Processed',
+    // status: 'Not Processed',
+    status: 'Unable to reproduce',
     techs: [
       {
         id: 23483,

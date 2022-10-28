@@ -100,11 +100,25 @@
               <div class="request__header">
                 <span>Tech's Notes</span>
               </div>
-              <textarea v-model="order.technicianNotes" placeholder="Start typing here..." class="request__textarea"></textarea>
+              <textarea v-model="order.technicianNotes" placeholder="Start typing here..." class="request__textarea" :disabled="!isStart"></textarea>
             </div>
             <div class="request__dropdowns">
-              <Dropdown v-model="order.quotes.brakePadLeft" :options="brakePads" size="medium" title="Brake Pad Width - Left" theme="white" />
-              <Dropdown v-model="order.quotes.brakePadRight" :options="brakePads" size="medium" title="Brake Pad Width - Right" theme="white" />
+              <Dropdown
+                v-model="order.quotes.brakePadLeft"
+                :options="brakePads"
+                size="medium"
+                :disabled="!isStart"
+                title="Brake Pad Width - Left"
+                theme="white"
+              />
+              <Dropdown
+                v-model="order.quotes.brakePadRight"
+                :options="brakePads"
+                size="medium"
+                :disabled="!isStart"
+                title="Brake Pad Width - Right"
+                theme="white"
+              />
             </div>
           </div>
         </div>

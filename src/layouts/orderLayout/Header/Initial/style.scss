@@ -15,8 +15,6 @@
   }
 }
 
-
-
 .modal {
   &__wrapper {
     display: flex;
@@ -40,7 +38,7 @@
   }
   &__qr {
     background-color: $color-grey-smoke;
-    padding: 30px;
+    padding: 20px 30px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -64,7 +62,7 @@
     flex-direction: column;
     align-items: center;
     @include border(18px, $color-grey-flash, 1px, dashed);
-    padding: 30px;
+    padding: 20px 30px;
     & > i {
       font-size: 46px;
     }

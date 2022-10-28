@@ -21,7 +21,7 @@
           <span class="-bluegreen"> 10 Mb</span> and shorter than <span class="-blue">10 sec</span>.
         </div>
       </label>
-      <div class="modal__imgs">
+      <div v-if="images && images.length" class="modal__imgs">
         <div v-for="(img, idx) of images" :key="idx" class="modal__img">
           <img :src="img" />
           <i class="i-circle_close" @click="del(idx)" />
@@ -90,7 +90,7 @@ export default {
   methods: {
     ...mapMutations({
       changeNotes: 'workOrder/changeNotes',
-      changeInitial: 'workOrder/changeInitial',
+      changeInitial: 'workOrder/changeInitial'
     }),
     delNote(note) {
       this.changeNotes({note, action: 'delete'})
@@ -148,8 +148,7 @@ export default {
     },
     hide() {
       this.$vfm.hide('Initial')
-      this.changeNotes({note: null}),
-      this.changeInitial()
+      this.changeNotes({note: null}), this.changeInitial()
     }
   }
 }

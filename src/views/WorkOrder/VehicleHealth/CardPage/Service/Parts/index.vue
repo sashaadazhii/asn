@@ -5,7 +5,7 @@
       <div class="section__parts">
         <Part v-for="(part, idx) of parts" :key="idx" :part="part" @select="select" />
         <NewPart v-if="isNew" @close="isNew = false" />
-        <div v-if="!isNew" class="section__btn" @click="isNew = true"><i class="i-add_circle" /><span>Add new part</span></div>
+        <div v-if="!isNew && isStart" class="section__btn" @click="isNew = true"><i class="i-add_circle" /><span>Add new part</span></div>
       </div>
     </div>
 
@@ -62,7 +62,8 @@ export default {
 
   computed: {
     ...mapState({
-      service: s => s.company.cannedServices.activeService
+      service: s => s.company.cannedServices.activeService,
+      isStart: s => s.workOrder.isStart
     }),
     parts() {
       return this.service.parts
