@@ -353,7 +353,7 @@ const routes = [
     component: () => import('@/views/Documentation')
   },
   {
-    path: '/service-advisor',
+    path: '/service-advisor/:uid',
     name: 'SAView',
     meta: {layout: 'order', access: ['admin', 'technician', 'service-advisor'], auth: true, header: 'WorkOrder'},
     component: () => import('@/views/WorkOrder/AdvisorView'),

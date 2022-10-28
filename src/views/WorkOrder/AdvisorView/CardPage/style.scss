@@ -69,272 +69,284 @@
     }
   }
   &__main {
-    padding-top: 20px;
+    padding: 20px 0 0 20px;
     display: grid;
     grid-template-columns: 2.5fr 1fr;
+    gap: 30px;
     overflow: hidden;
-    &-blocks {
-      overflow: hidden;
-      max-height: 100%;
-      display: grid;
-      grid-template-rows: repeat(4, auto) 1fr;
-    }
-    &-requests {
-      background-color: $color-grey-smoke;
-      border-top-left-radius: 16px;
-      padding: 16px 20px;
-      overflow: hidden;
-      display: grid;
-      grid-template-rows: auto auto auto 1fr;
-    }
-    &.-full {
-      padding-top: 0;
-      grid-template-columns: 1fr;
-    }
   }
-}
-.blocks {
-  padding: 0 30px;
-  &__title {
-    margin: 10px 0;
-    @include font(24px, $color-grey-space, 600);
-  }
-  &__subtitle {
-    @include font(14px, $color-grey-space, 500);
-    margin-bottom: 16px;
-  }
-  &__nav {
-    display: flex;
-    column-gap: 12px;
-    margin-bottom: 10px;
-    & > .-white {
-      background-color: $color-white;
-    }
-    & > .-green {
-      color: $color-green;
-      border-color: $color-green;
-    }
-  }
-  &__btn {
-    height: 36px;
-    padding: 0 10px;
-    @include border(10px, $color-grey-flash);
-    @include font(16px, $color-grey, 600);
-    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-    &:hover {
-      border-color: $color-green;
-    }
-    &.-green {
-      border-color: $color-green;
-      color: $color-green;
-    }
-    & > span {
-      height: 20px;
-      width: 20px;
-      display: grid;
-      place-items: center;
-      @include font(12px, $color-white, 600);
-      background-color: $color-green;
-      border-radius: 50%;
-    }
-  }
-  &__inner {
-    display: grid;
-    overflow: hidden;
-    padding-bottom: 20px;
-  }
-}
+  &__body {
+    height: 100%;
+    overflow-y: auto;
+    @include hideScrollbar();
+    &-top {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+      margin: 12px 0 20px;
 
-.requests {
-  &__row {
+      & > i {
+        font-size: 14px;
+        color: $color-orange;
+      }
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+    }
+  }
+  &__sidebar {
+    background-color: $color-grey-smoke;
+    border-top-left-radius: 16px;
+    padding: 16px 20px;
+    overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+    margin-top: 60px;
+  }
+  &__back {
+    display: flex;
     align-items: center;
-    justify-items: start;
-    border-bottom: 1px solid $color-grey-flash;
-    padding: 12px 0;
-    &:first-child {
-      padding-top: 0;
-    }
-    &-title {
-      @include font(14px, $color-grey, 600);
-    }
-    & > .-orange {
-      background-color: $color-orange;
-    }
-    & > .-shadow.-none {
-      background-color: $color-grey-flash;
+    column-gap: 12px;
+    @include font(18px, $color-grey-space, 600);
+    cursor: pointer;
+    & > i {
+      font-size: 20px;
       color: $color-grey;
     }
   }
   &__label {
-    transition: opacity 0.2s ease-in-out;
-    &.-red {
-      background-color: $color-red;
-    }
-    &.-orange {
-      background-color: $color-orange;
-    }
-    &.-bluegreen {
-      background-color: $color-bluegreen;
-    }
-    &.-none {
-      border-color: $color-grey-flash;
-      background-color: $color-grey-smoke;
-      color: $color-grey;
-    }
-    &.-shadow {
-      padding-right: 10px;
-      &.-green {
-        background-color: $color-green-mint;
-        color: $color-green;
-        &.-border {
-          border-color: $color-green;
-        }
-      }
-      &.-red {
-        color: $color-red;
-        background-color: rgba($color-red, 0.1);
-      }
-      &.-purple {
-        color: $color-purple;
-        background-color: rgba($color-purple, 0.1);
-      }
-      &.-bluegreen {
-        color: $color-bluegreen;
-        background-color: rgba($color-bluegreen, 0.1);
-      }
-      &.-none {
-        border-color: transparent;
-        background-color: $color-grey-smoke;
+    padding: 8px 10px;
+    @include border(8px);
+    background-color: $color-grey-smoke;
+    @include font(14px, $color-grey-space, 600);
+    &.light {
+      background-color: $color-white;
+      span {
         color: $color-grey;
       }
     }
-    &.-hover {
-      &:hover {
-        cursor: pointer;
-        opacity: 0.6;
+
+    &.large {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 18px;
+      @include border(14px, $color-green);
+      background-color: $color-white;
+      @include font(16px, $color-grey, 500);
+
+      .modal__label-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+      }
+      & input {
+        min-width: 24px;
+        max-width: 44px;
+        text-align: right;
       }
     }
-    &.-disabled {
-      opacity: 1 !important;
-      cursor: default !important;
+    &-accent {
+      font-weight: 600;
+      color: $color-grey-space;
     }
   }
-  &__list {
-    margin-top: 20px;
-    overflow: auto;
-    @include hideScrollbar;
-    &-title {
-      @include font(14px, $color-grey-dark, 600);
-      margin-bottom: 12px;
-    }
+  &__text {
+    @include font(14px, $color-grey, 600);
   }
 }
-.request {
-  &__wrapper {
-    padding: 16px;
-    background-color: $color-white;
-    @include border(16px, $color-grey-flash);
-    box-shadow: 0px 3px 0px rgba($color-grey-space, 0.05);
-    &:not(:last-child) {
-      margin-bottom: 12px;
-    }
-  }
+
+.block {
+  padding: 16px;
+  margin-bottom: 20px;
+  @include border(16px);
+  background-color: $color-grey-smoke;
   &__header {
     display: flex;
-    align-items: center;
-    column-gap: 8px;
-    margin-bottom: 12px;
-    & > i {
-      @include font(16px, $color-blue);
-    }
-    & > span {
-      @include font(14px, $color-grey-space, 600);
-    }
-  }
-  &__row {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px;
-    &-title {
-      @include font(14px, $color-grey, 500);
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    &-text {
-      @include font(14px, $color-grey-space, 600);
-
-      &.-green {
-        color: $color-green;
-      }
-      &.-red {
-        color: $color-red;
-      }
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
   }
-  &__tracker {
+  &__main {
+    margin-top: 20px;
+  }
+  &__title {
+    @include font(18px, $color-grey-space, 600);
   }
   &__textarea {
+    height: 58px;
     width: 100%;
-    min-height: 80px;
+    padding: 18px;
+    @include border(14px);
+    background-color: $color-white;
+    @include font(16px, $color-grey-space, 500);
     resize: vertical;
-    @include font(14px, $color-grey, 500, 1.4);
-    @include hideScrollbar;
+    &.blue {
+      border-color: $color-blue-secondary;
+    }
+    &.orange {
+      border-color: $color-orange;
+    }
+    &.green {
+      height: 100px;
+      padding-top: 36px;
+      border-color: $color-green;
+    }
   }
   &__textarea::-webkit-resizer {
     display: none;
   }
-  &__dropdowns {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    margin-top: 20px;
+  &__inner {
+    padding: 18px;
+    @include border(16px);
+    background-color: $color-white;
   }
-}
-
-.tracker {
-  border-top: 1px dashed $color-grey-flash;
-  padding-top: 12px;
-  &__header {
+  &__halfs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  &__half {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &-cell {
-      display: flex;
-      align-items: center;
-      column-gap: 6px;
-      & > i {
-        @include font(14px, $color-grey);
-      }
-      & > span {
-        &:first-of-type {
-          @include font(12px, $color-grey, 500);
-        }
-        &:last-of-type {
-          @include font(12px, $color-grey-space, 600);
-        }
-      }
-    }
-  }
-  &__progress {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 6px;
-    margin-top: 12px;
-    & > span {
-      height: 4px;
-      background-color: $color-grey-flash;
-      border-radius: 4px;
-      &.-green {
-        background-color: $color-green;
-      }
+    height: 54px;
+    padding: 16px 12px;
+    margin-bottom: 10px;
+    @include border(14px);
+    background-color: $color-grey-smoke;
+    &-title {
+      @include font(14px, $color-grey-space, 600);
     }
   }
 }
+.textarea {
+  position: relative;
 
+  &__title {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    @include font(12px, $color-grey, 500);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+}
+
+.slider {
+  &__wrapper {
+    height: 400px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 180px;
+    padding-bottom: 16px;
+    overflow: hidden;
+  }
+  &__view {
+    overflow: hidden;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      border-radius: 16px;
+      pointer-events: none;
+      background: linear-gradient(0deg, rgba(1, 1, 1, 0.3), rgba(1, 1, 1, 0.3));
+    }
+
+    & > img,
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    i {
+      font-size: 46px;
+      color: $color-white;
+    }
+  }
+  &__title {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    @include font(16px, $color-white, 700);
+    z-index: 3;
+  }
+  &__controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-grey-dark, 0.6);
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    & > span {
+      font-size: 46px;
+      cursor: pointer;
+    }
+  }
+  &__list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    @include hideScrollbar();
+  }
+  &__thumb {
+    flex: 1 0 80px;
+    position: relative;
+    width: 100%;
+    height: 92px;
+    cursor: pointer;
+    & > img,
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      border-radius: 16px;
+      pointer-events: none;
+      background: rgba($color-grey, 0.5);
+      transition: 0.2s;
+    }
+    &.-active::before {
+      background: none;
+    }
+  }
+}
 .tech {
   &__list {
     display: flex;
@@ -362,8 +374,74 @@
     border: 1px solid $color-white;
   }
 }
-
+.parts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .y-dropdown-item-custom > i {
   @include font(22px, $color-green);
   margin: -1px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 16px 12px;
+  margin-bottom: 10px;
+  @include border(14px);
+  background-color: $color-white;
+  transition: 0.2s;
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__title {
+    @include font(14px, $color-grey-space, 600);
+  }
+  &__text {
+    @include font(14px, $color-grey, 600);
+  }
+  &__input {
+    position: relative;
+    width: 90px;
+    height: 34px;
+    padding: 10px 6px;
+    @include border(8px);
+    background-color: $color-white;
+    @include font(14px, $color-grey-space, 700);
+    text-align: center;
+  }
+  &.active {
+    background-color: $color-grey-smoke;
+  }
+}
+.y-radio {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  @include border(50%, $color-grey-light, 2px);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $color-green;
+  }
+  &.active {
+    border-color: $color-green;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: $color-green;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+    }
+  }
 }

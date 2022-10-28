@@ -2,6 +2,7 @@
   <div class="header__wrapper">
     <div class="header__title">
       <span v-if="isNew">Create new Work Order</span>
+      <!-- :label="order.customStatus?.name || order.logicalStatus" -->
       <Label
         v-else
         :label="order.customStatus?.name || order.logicalStatus"
@@ -32,7 +33,7 @@
       </div>
       <div v-if="cardsApproved && isStart">
         <!-- <router-link :to="`/work-order/${uid}/vehicle-health/checkout`"> -->
-        <router-link :to="`/service-advisor`">
+        <router-link :to="`/service-advisor/${uid}`">
           <Button label="Ready for Service Advisor Review" icon="i-check_circle" class="mint" color="#10B981" />
         </router-link>
       </div>
@@ -63,6 +64,8 @@ export default {
   async created() {
     if (this.uid !== 'new') this.isNew = false
     await this.fetch()
+    await this.findOrder(this.uid)
+    console.log(this.order)
   },
   computed: {
     ...mapState({
@@ -86,7 +89,8 @@ export default {
     }),
     ...mapActions({
       create: 'workOrder/create',
-      fetch: 'company/cards/fetch'
+      fetch: 'company/cards/fetch',
+      findOrder: 'workOrder/find'
     }),
     async createOrder() {
       await this.create(this.order)
@@ -124,6 +128,7 @@ export default {
     start() {
       this.isStart = !this.isStart
       this.startOrder(this.isStart)
+      this.order.logicalStatus = 'Started'
       if (this.isStart) this.open()
     },
     close() {

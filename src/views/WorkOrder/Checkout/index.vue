@@ -146,7 +146,6 @@ export default {
       let part = c.parts
       part.forEach(p => this.parts.push(p))
     })
-    console.log(this.order)
   },
   computed: {
     ...mapState({

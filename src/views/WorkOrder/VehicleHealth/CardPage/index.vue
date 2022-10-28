@@ -210,7 +210,6 @@ export default {
       setActiveService: 'company/cannedServices/setActiveService'
     }),
     async beforeOpen(e) {
-      // this.uid = e.ref.params_rawValue
       this.uid = this.$route.params.uid
       await this.findOrder(this.uid)
     },

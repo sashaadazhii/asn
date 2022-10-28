@@ -18,6 +18,7 @@ const serviceList = [
         name: 'Filtron OP-595',
         price: 150,
         quantity: 2,
+        description: 'per axle',
         core: 0,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
@@ -27,6 +28,7 @@ const serviceList = [
         name: 'Filtron OP-575',
         price: 10,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 2,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
@@ -50,6 +52,7 @@ const serviceList = [
         name: 'Filtron OP-595',
         price: 40,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
@@ -59,6 +62,7 @@ const serviceList = [
         name: 'Filtron OP-575',
         price: 150,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
@@ -82,6 +86,7 @@ const serviceList = [
         name: 'Filtron OP-595',
         price: 150,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 0,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
@@ -91,6 +96,7 @@ const serviceList = [
         name: 'Filtron OP-575',
         price: 90,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 2,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
@@ -114,6 +120,7 @@ const serviceList = [
         name: 'Filtron OP-595',
         price: 10,
         quantity: 12,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       },
@@ -123,6 +130,7 @@ const serviceList = [
         name: 'Filtron OP-575',
         price: 140,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 3,
         createdAt: '2022-01-18T10:39:32.000Z'
       }
@@ -150,6 +158,7 @@ const serviceList = [
         name: 'Filter OP-595',
         price: 75,
         quantity: 1,
+        description: 'Front brake rotors',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -160,6 +169,7 @@ const serviceList = [
         name: 'sealer AR-5938',
         price: 10,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'In-house',
         select: false
@@ -170,6 +180,7 @@ const serviceList = [
         name: 'bolt 6x40',
         price: 2,
         quantity: 31,
+        description: 'Front brake rotors',
         core: 11,
         type: 'Manufacturers',
         select: false
@@ -197,6 +208,7 @@ const serviceList = [
         name: 'Filter OP-595',
         price: 20,
         quantity: 11,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -207,6 +219,7 @@ const serviceList = [
         name: 'sealer AR-5938',
         price: 10,
         quantity: 4,
+        description: 'Front brake rotors',
         core: 3,
         type: 'In-house',
         select: false
@@ -217,6 +230,7 @@ const serviceList = [
         name: 'bolt 6x40',
         price: 22,
         quantity: 4,
+        description: 'Front brake rotors',
         core: 1,
         type: 'Manufacturers',
         select: false
@@ -246,6 +260,7 @@ const serviceList = [
         name: 'Engine air filter',
         price: 28.5,
         quantity: 3,
+        description: 'Front brake rotors',
         core: 2,
         type: 'Warranty Claim',
         select: false
@@ -276,6 +291,7 @@ const serviceList = [
         name: 'Cabin Air filter',
         price: 34.79,
         quantity: 2,
+        description: 'Front brake rotors',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -306,6 +322,7 @@ const serviceList = [
         name: '5901 Universal Cooling System Kit',
         price: 43.95,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -316,6 +333,7 @@ const serviceList = [
         name: 'Antifreeze (Khameleon)',
         price: 6.8,
         quantity: 7,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 5,
         type: 'Warranty Claim',
         select: false
@@ -326,6 +344,7 @@ const serviceList = [
         name: 'Environmental  Charge',
         price: 5.5,
         quantity: 2,
+        description: 'Front brake rotors',
         core: 2,
         type: 'Warranty Claim',
         select: false
@@ -356,6 +375,7 @@ const serviceList = [
         name: '516-000 Synthetic Automatic transmission fluid',
         price: 16.05,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -366,6 +386,7 @@ const serviceList = [
         name: '6600 transmission service kit',
         price: 46.65,
         quantity: 2,
+        description: 'per axle',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -376,6 +397,7 @@ const serviceList = [
         name: 'Environmental  Charge',
         price: 5.5,
         quantity: 3,
+        description: 'Front brake rotors',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -406,6 +428,7 @@ const serviceList = [
         name: '6700 Power steering flush Kit includes fluid',
         price: 82.86,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 10,
         type: 'Warranty Claim',
         select: false
@@ -416,6 +439,7 @@ const serviceList = [
         name: 'Enviromental Charge',
         price: 5.5,
         quantity: 1,
+        description: 'Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs',
         core: 10,
         type: 'Warranty Claim',
         select: false
@@ -445,6 +469,7 @@ const serviceList = [
         name: 'Spark plugs',
         price: 16.75,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -455,6 +480,7 @@ const serviceList = [
         name: 'Ignition coil boots',
         price: 22.5,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 2,
         type: 'Warranty Claim',
         select: false
@@ -465,6 +491,7 @@ const serviceList = [
         name: 'Injector cleaning kit',
         price: 76.89,
         quantity: 5,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 19,
         type: 'Warranty Claim',
         select: false
@@ -475,6 +502,7 @@ const serviceList = [
         name: 'Engine tuneup service kit',
         price: 24,
         quantity: 5,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 15,
         type: 'Warranty Claim',
         select: false
@@ -505,6 +533,7 @@ const serviceList = [
         name: 'Timing belt',
         price: 156.98,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 15,
         type: 'Warranty Claim',
         select: false
@@ -515,6 +544,7 @@ const serviceList = [
         name: 'Belt Tensioner',
         price: 78.1,
         quantity: 5,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 6,
         type: 'Warranty Claim',
         select: false
@@ -525,6 +555,7 @@ const serviceList = [
         name: 'Water pump',
         price: 134,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 10,
         type: 'Warranty Claim',
         select: false
@@ -535,6 +566,7 @@ const serviceList = [
         name: 'Antifreeze',
         price: 6.3,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 5,
         type: 'Warranty Claim',
         select: false
@@ -545,6 +577,7 @@ const serviceList = [
         name: 'Enviromental Charge',
         price: 5.5,
         quantity: 6,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 9,
         type: 'Warranty Claim',
         select: false
@@ -575,6 +608,7 @@ const serviceList = [
         name: '2991 Platinum Fuel Service Kit #2',
         price: 179.07,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 14,
         type: 'Warranty Claim',
         select: false
@@ -585,6 +619,7 @@ const serviceList = [
         name: 'Enviromental charge',
         price: 5.5,
         quantity: 21,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 3,
         type: 'Warranty Claim',
         select: false
@@ -615,6 +650,7 @@ const serviceList = [
         name: '84032 Dot 4 Brake Fluid',
         price: 38.65,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 12,
         type: 'Warranty Claim',
         select: false
@@ -625,6 +661,7 @@ const serviceList = [
         name: 'Enviromental charge',
         price: 5.5,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 14,
         type: 'Warranty Claim',
         select: false
@@ -655,6 +692,7 @@ const serviceList = [
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs)',
         price: 19.04,
         quantity: 5,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 13,
         type: 'Warranty Claim',
         select: false
@@ -685,6 +723,7 @@ const serviceList = [
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs) (#BHSK)',
         price: 19.04,
         quantity: 10,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 7,
         type: 'Warranty Claim',
         select: false
@@ -714,6 +753,7 @@ const serviceList = [
         name: 'XC19 Wiper blade',
         price: 19.25,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 31,
         type: 'Warranty Claim',
         select: false
@@ -724,6 +764,7 @@ const serviceList = [
         name: 'XC21 Wiper blade',
         price: 24.78,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 19,
         type: 'Warranty Claim',
         select: false
@@ -753,6 +794,7 @@ const serviceList = [
         name: '9005 Bulb',
         price: 16.9,
         quantity: 10,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -782,6 +824,7 @@ const serviceList = [
         name: '796MF battery',
         price: 156.98,
         quantity: 4,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 34,
         type: 'Warranty Claim',
         select: false
@@ -812,6 +855,7 @@ const serviceList = [
         name: 'P205/65R16 General RT40 Tires',
         price: 145.89,
         quantity: 34,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 13,
         type: 'Warranty Claim',
         select: false
@@ -822,6 +866,7 @@ const serviceList = [
         name: 'Tire service kit -per wheel (includes wheel weights, valve stems, cleaners, rim cleaning disc)',
         price: 8.08,
         quantity: 32,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 7,
         type: 'Warranty Claim',
         select: false
@@ -852,6 +897,7 @@ const serviceList = [
         name: 'P205/65R16 Michelin X-ice Tires',
         price: 198,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 5,
         type: 'Warranty Claim',
         select: false
@@ -862,6 +908,7 @@ const serviceList = [
         name: 'Tire service kit -per wheel (includes wheel weights, valve stems, cleaners, rim cleaning disc)',
         price: 8.08,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 9,
         type: 'Warranty Claim',
         select: false
@@ -891,6 +938,7 @@ const serviceList = [
         name: 'YH12367 Accessories drive belt',
         price: 65.89,
         quantity: 4,
+        description: 'Front brake rotors',
         core: 90,
         type: 'Warranty Claim',
         select: false
@@ -921,6 +969,7 @@ const serviceList = [
         name: '20 ft 3/16 Brake line',
         price: 12.09,
         quantity: 8,
+        description: 'Front brake rotors',
         core: 2,
         type: 'Warranty Claim',
         select: false
@@ -931,6 +980,7 @@ const serviceList = [
         name: 'Brake fittings',
         price: 6.09,
         quantity: 14,
+        description: 'Front brake rotors',
         core: 12,
         type: 'Warranty Claim',
         select: false
@@ -941,6 +991,7 @@ const serviceList = [
         name: 'Brake line and fitting service kit. (fittings, brake lines, connectors, plastic ties, cleaners, undercoating)',
         price: 68,
         quantity: 3,
+        description: 'Front brake rotors',
         core: 12,
         type: 'Warranty Claim',
         select: false
@@ -970,6 +1021,7 @@ const serviceList = [
         name: 'XC 1897 Front brake pads',
         price: 123.98,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -980,6 +1032,7 @@ const serviceList = [
         name: 'YC 1246789 Front brake rotors',
         price: 67.98,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 13,
         type: 'Warranty Claim',
         select: false
@@ -990,6 +1043,7 @@ const serviceList = [
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         price: 19.09,
         quantity: 6,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 7,
         type: 'Warranty Claim',
         select: false
@@ -1019,6 +1073,7 @@ const serviceList = [
         name: 'PXD1602H Rear brake pads',
         price: 109.5,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1029,6 +1084,7 @@ const serviceList = [
         name: 'YH421758P Rear brake rotors',
         price: 212.61,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1039,6 +1095,7 @@ const serviceList = [
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs) (#BHSK)',
         price: 19.09,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1068,6 +1125,7 @@ const serviceList = [
         name: '172889 Front strut',
         price: 379.82,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1078,6 +1136,7 @@ const serviceList = [
         name: '172888 Front strut',
         price: 379.82,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1088,6 +1147,7 @@ const serviceList = [
         name: '37302 Rear shock',
         price: 114.28,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 3,
         type: 'Warranty Claim',
         select: false
@@ -1098,6 +1158,7 @@ const serviceList = [
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
         quantity: 12,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         type: 'Warranty Claim',
         select: false
@@ -1128,6 +1189,7 @@ const serviceList = [
         name: 'RK620487',
         price: 246.51,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1138,6 +1200,7 @@ const serviceList = [
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
         quantity: 2,
+        description: 'per axle ',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1175,6 +1238,7 @@ const serviceList = [
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
         quantity: 3,
+        description: 'Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1205,6 +1269,7 @@ const serviceList = [
         name: '510063 Front wheel bearing',
         price: 120.46,
         quantity: 3,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1215,6 +1280,7 @@ const serviceList = [
         name: 'Chassis service kit (Shims, cotter pins, lubricants, nuts, bolts, penetrating oil, oxygen/acetylene, hardware) (#CSK) (In Stock)',
         price: 18,
         quantity: 7,
+        description: 'Brake cleaner, hardware, lubricants',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1244,6 +1310,7 @@ const serviceList = [
         name: '194 Bulb',
         price: 9.89,
         quantity: 10,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 4,
         type: 'Warranty Claim',
         select: false
@@ -1283,6 +1350,7 @@ const serviceList = [
         name: 'Part: 20 ft 3/16 Brake line',
         price: 6.09,
         quantity: 4,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 7,
         type: 'Warranty Claim',
         quantity: 6,
@@ -1294,6 +1362,7 @@ const serviceList = [
         name: 'Part: Brake line and fitting service kit. (fittings, brake lines, connectors, plastic ties, cleaners, undercoating)',
         price: 68,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 7,
         type: 'Warranty Claim',
         quantity: 1,
@@ -1324,6 +1393,7 @@ const serviceList = [
         name: 'XC 1897 Front brake pads',
         price: 123.98,
         quantity: 1,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 30.55,
         type: 'Warranty Claim',
         select: false
@@ -1334,6 +1404,7 @@ const serviceList = [
         name: 'YC 1246789 Front brake rotors',
         price: 67.98,
         quantity: 2,
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 30.55,
         type: 'Warranty Claim',
         select: false
@@ -1342,6 +1413,7 @@ const serviceList = [
         id: 71,
         serviceID: 33,
         name: 'XL6578 Right Front brake caliper',
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 40.25,
         price: 123.45,
         quantity: 1,
@@ -1352,6 +1424,7 @@ const serviceList = [
         id: 72,
         serviceID: 33,
         name: 'XL6577 Left Front brake caliper',
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 40.25,
         price: 123.45,
         quantity: 1,
@@ -1362,6 +1435,7 @@ const serviceList = [
         id: 73,
         serviceID: 33,
         name: 'Brake hardware & supplies service kit - per axle (Brake cleaner, hardware,lubricants,anti-squeal compound,roloc discs)',
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 0,
         price: 19.09,
         quantity: 1,
@@ -1392,6 +1466,7 @@ const serviceList = [
         id: 74,
         serviceID: 34,
         name: 'Exhaust service kit (oxygen/acetylene, clamps, gaskets, welding wire, nuts, bolts, exhaust hanger rod) (#EXSK)',
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 2,
         quantity: 1,
         price: 52,
@@ -1402,6 +1477,7 @@ const serviceList = [
         id: 75,
         serviceID: 34,
         name: 'Exhaust extension pipe from y pipe to intermediate pipe',
+        description: 'per axle (Brake cleaner, hardware, lubricants, anti-squeal compound, roloc discs)',
         core: 1,
         quantity: 1,
         price: 43.63,
@@ -1412,6 +1488,7 @@ const serviceList = [
         id: 76,
         serviceID: 34,
         name: 'Intermediate pipe',
+        description: 'Brake cleaner, hardware, lubricants',
         core: 1,
         quantity: 2,
         price: 41.4,
@@ -1422,6 +1499,7 @@ const serviceList = [
         id: 77,
         serviceID: 34,
         name: 'Tail pipe',
+        description: 'per axle',
         core: 2,
         quantity: 3,
         price: 131.67,
@@ -1432,6 +1510,7 @@ const serviceList = [
         id: 78,
         serviceID: 34,
         name: '21539- Muffler',
+        description: 'hardware, lubricants, anti-squeal compound, roloc discs',
         core: 3,
         quantity: 3,
         price: 34.38,
@@ -1480,6 +1559,7 @@ const serviceList = [
         id: 79,
         serviceID: 36,
         name: 'R84047 Oil filter',
+        description: 'anti-squeal compound, roloc discs',
         core: 0,
         quantity: 1,
         price: 12.35,
@@ -1490,6 +1570,7 @@ const serviceList = [
         id: 80,
         serviceID: 36,
         name: '0w20 Full Synthetic oil',
+        description: 'Front brake rotors',
         core: 0,
         quantity: 4.5,
         price: 15.95,
@@ -1500,6 +1581,7 @@ const serviceList = [
         id: 81,
         serviceID: 36,
         name: 'Environmental Charge (waste, oils, fluids and filter disposal, oil separator maintenance) (#ENV)',
+        description: 'per axle',
         core: 0,
         quantity: 1,
         price: 4.5,

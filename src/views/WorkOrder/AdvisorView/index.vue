@@ -77,18 +77,14 @@ export default {
     },
     openCard(card) {
       this.setCard(card)
-
-      this.$vfm.show(
-        {
-          component: CardPage,
-          bind: {
-            name: 'CardPage',
-            'click-to-close': false,
-            'esc-to-close': true
-          }
-        },
-        card.uid
-      )
+      this.$vfm.show({
+        component: CardPage,
+        bind: {
+          name: 'AdvisorCardPage',
+          'click-to-close': false,
+          'esc-to-close': true
+        }
+      })
     },
     changeStatus(card) {
       card.advisorApprove = !card.advisorApprove

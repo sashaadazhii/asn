@@ -41,7 +41,7 @@ $mobile-screen-width: 480px;
   }
 }
 
-@mixin shadow($color: $color-grey-space, $opacity: .05) {
+@mixin shadow($color: $color-grey-space, $opacity: 0.05) {
   box-shadow: 0px 3px 0px rgba($color, $opacity);
 }
 
@@ -96,6 +96,7 @@ $color-orange-bright: #ffa14e;
 
 $color-bluegreen: #3eb3bb;
 $color-blue: #2c9aff;
+$color-blue-secondary: #2c9aff;
 $color-blue-light: #e8f4ff;
 $color-violet: #ba8ae7;
 $color-purple: #9b51e0;
